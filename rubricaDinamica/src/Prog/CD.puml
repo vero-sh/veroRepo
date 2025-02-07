@@ -9,6 +9,9 @@ class Rubrica{
 
     -ordina() : void
 }
+class type{
+    + tipi : String[]
+}
 class Numero{
     -telefono : String
     -tipo : String
@@ -28,5 +31,6 @@ class Contatto{
 
 Contatto "1..*"--*"1" Rubrica
 Numero "1..*"--*"1" Contatto
+Numero --> type
 
 @enduml
