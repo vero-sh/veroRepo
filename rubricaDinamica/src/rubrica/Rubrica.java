@@ -35,6 +35,7 @@ public class Rubrica {
         if(contatti.contains(contatto)) {
             r = contatti.get(contatti.indexOf(contatto));
             contatti.remove(contatto);
+            ordina();
             return r;
         }
         return null;
@@ -43,7 +44,9 @@ public class Rubrica {
         Contatto t = contatto1;
         if(contatti.contains(contatto1)) {
             contatti.set(contatti.indexOf(contatto1), contatto2);
+            ordina();
             return t;
+
         }
         return null;
     }
@@ -71,8 +74,7 @@ public class Rubrica {
                     } else if(contatti.get(i).getCognome().length() == lengthRicerca){
                         if(contatti.get(i).getCognome().equals(ricerca))
                             trovati.add(contatti.get(i));
-                }
-
+                    }
                     break;
                 case 2:
                     lengthRicerca = ricerca.length();
@@ -83,7 +85,6 @@ public class Rubrica {
                         if(contatti.get(i).getNome().equals(ricerca))
                             trovati.add(contatti.get(i));
                     }
-
                     break;
                 case 3:
                     for(Numero n : contatti.get(i).getNumeri()) {
@@ -97,5 +98,11 @@ public class Rubrica {
 
         }
         return trovati;
+    }
+    public void stampaRubrica(){
+        ordina();
+        for(int i = 0; i<contatti.size(); i++){
+            System.out.println(contatti.get(i).toString());
+        }
     }
 }
