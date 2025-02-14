@@ -1,0 +1,54 @@
+@startuml
+    package PandoraUnobtanium {
+        class Coordinata {
+            - latitudine : double
+            - longitudine : double
+        }
+
+        class Avatar {
+            - nome : String
+            - arma : String
+            - forzaAttacco : int
+            + attacca(PostazioneRDA) : boolean
+        }
+
+        class PostazioneRDA {
+            - posizione : Coordinata
+            - difesa : int
+            - unobtanium : int
+            + difendi(forzaAttacco) : int
+        }
+
+        class RaidSimulator {
+            - avatar : Avatar[]
+            - postazione : PostazioneRDA
+            + eseguiRaid() : void
+        }
+
+        exception AttaccoFallitoException
+        exception ArmaMalfunzionanteException
+        exception DifesaInsufficienteException
+        exception UnobtaniumEsauritoException
+
+        class Exception
+    }
+
+    package main {
+        class Main {}
+    }
+
+    Avatar "1" -> "0..1" PostazioneRDA
+    PostazioneRDA "1" -> "1" Coordinata
+    RaidSimulator "1" *-- "0..*" Avatar : contiene
+    RaidSimulator "1" *-- "1" PostazioneRDA : gestisce
+    DifesaInsufficienteException --|> Exception
+    UnobtaniumEsauritoException --|> Exception
+    AttaccoFallitoException --|> Exception
+    ArmaMalfunzionanteException --|> Exception
+    PostazioneRDA --- DifesaInsufficienteException
+    PostazioneRDA --- UnobtaniumEsauritoException
+    Avatar --- AttaccoFallitoException
+    Avatar --- ArmaMalfunzionanteException
+
+    Main --> RaidSimulator : "Istanzia"
+@enduml
