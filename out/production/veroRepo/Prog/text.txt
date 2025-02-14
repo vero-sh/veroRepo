@@ -1,0 +1,11 @@
+Con rifermento alla precedente versione (4-ott-2024)  delle rubrica del telefono, introdurre le seguienti modifiche:
+    Al posto di un'array di contatti si utilizza una lista dinamica
+    I contatti sono aggiunti nella lista in ordine alfabetico per cognome e per nome. Nel caso di omonimia si aggiunge in coda al contatto.
+
+ Cercare il contatto o i contatti per:
+    nome, cognome o telefono.
+    per cognome con le lettere iniziali (esempio tutti i contatti il cui cognome inizia per "An").
+I contatti sono caratterizati dal nome, cognome, uno o più numero di telefono, email(opzionale),
+ indirizzo (opzionale) e note (opzionale). I numeri di telefono sono caratterizzata dal numero, il tipo (principale, abitazione, lavoro, ecc).
+
+Nel Main deve essere possobile creare un'oggetto Rubrica e gestire tutte le funzionalità. Cosegnare il class diagram e il codice in Java.

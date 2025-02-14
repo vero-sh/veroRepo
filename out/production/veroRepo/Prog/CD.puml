@@ -1,0 +1,36 @@
+@startuml
+package rubrica{
+class Rubrica{
+    -contatti : ArrayList<Contatto>
+    +aggiungiContatto() : boolean
+    +cancellaContatto() : Contatto
+    +modificaContatto() : Contatto
+    +cercaContatto() : ArrayList<Contatto>
+
+    -ordina() : void
+}
+class type{
+    + tipi : String[]
+}
+class Numero{
+    -telefono : String
+    -tipo : String
+    -inizializzaTipo() : void
+}
+class Contatto{
+    - nome : String
+    - cognome : String
+    - numeri : ArrayList<Numero>
+    - email : String
+    - indirizzo : String
+    - nota : String
+
+    -inizializzaAttributi() : void
+}
+}
+
+Contatto "1..*"--*"1" Rubrica
+Numero "1..*"--*"1" Contatto
+Numero --> type
+
+@enduml
