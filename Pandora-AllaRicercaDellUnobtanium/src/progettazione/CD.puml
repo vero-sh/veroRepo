@@ -37,10 +37,10 @@
         class Main {}
     }
 
-    Avatar "1" -> "0..1" PostazioneRDA
+    Avatar "1" -right-> "  0..1" PostazioneRDA
     PostazioneRDA "1" -> "1" Coordinata
-    RaidSimulator "1" *-- "0..*" Avatar : contiene
-    RaidSimulator "1" *-- "1" PostazioneRDA : gestisce
+    RaidSimulator "1  " *-- "0..*" Avatar : contiene
+    RaidSimulator "1" *-- "1   " PostazioneRDA : gestisce
     DifesaInsufficienteException --|> Exception
     UnobtaniumEsauritoException --|> Exception
     AttaccoFallitoException --|> Exception

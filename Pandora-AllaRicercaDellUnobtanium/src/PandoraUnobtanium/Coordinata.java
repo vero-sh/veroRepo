@@ -1,10 +1,18 @@
 package PandoraUnobtanium;
 
 public class Coordinata {
+    //------------------------------------------------------------------------------------------------------------------
+    //------------------------------------------------------ATTRIBUTI---------------------------------------------------
+    //------------------------------------------------------------------------------------------------------------------
 
     private double latitudine, longitudine;
     private String puntiCardinaliLat, puntiCardinaliLong;
 
+    //------------------------------------------------------------------------------------------------------------------
+    //--------------------------------------------------------METODI----------------------------------------------------
+    //------------------------------------------------------------------------------------------------------------------
+
+    //COSTRUTTORE
     public Coordinata(double latitudine, double longitudine, String puntiCardinaliLat, String puntiCardinaliLong) {
         this.latitudine = latitudine;
         this.longitudine = longitudine;
@@ -12,6 +20,7 @@ public class Coordinata {
         this.puntiCardinaliLong = puntiCardinaliLong;
     }
 
+    //GET & SET
     public double getLatitudine() {
         return latitudine;
     }
@@ -44,10 +53,12 @@ public class Coordinata {
         this.puntiCardinaliLong = puntiCardinaliLong;
     }
 
+    //TO STRING
     @Override
     public String toString() {
         return "Coordinate(" +
-                latitudine + puntiCardinaliLat + ","+
-                longitudine + puntiCardinaliLong + ")";
+                latitudine + puntiCardinaliLat +
+                ", " + longitudine + puntiCardinaliLong +
+                ')';
     }
 }
