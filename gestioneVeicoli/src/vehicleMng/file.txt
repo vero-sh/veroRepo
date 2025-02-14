@@ -1,0 +1,24 @@
+Scrivi un programma in Java per gestire diversi una rivendita di Auto e Moto. Segui questi passi:
+
+Creare una classe Rivendita con:
+    Variabili di istanza private (incapsulamento) per nome e lista di Veicoli.
+    Un costruttore per inizializzare il nome e il numero di Veicoli.
+    Un costruttore per inizializzare il nome e la lista di Veicoli
+    Metodi getter e setter per accedere/modificare la variabile nome.
+    Metodo add, per aggiungere un Veicolo alla lista.
+    Metodo read, per leggere la descrizione dei Veicoli presenti nella lista.
+    Medoto read(int index), per leggere la descrizione del Veicolo nella posizione index presente nella lista.
+    Crea una classe astratta Veicolo con:
+    Variabili di istanza private (incapsulamento) per marca, modello e anno.
+    Un costruttore per inizializzare queste variabili.
+    Metodi getter e setter per accedere/modificare le variabili.
+    Un metodo astratto descrivi(), che dovrà essere implementato dalle sottoclassi.
+    Crea due classi derivate Auto e Moto che estendono Veicolo:
+    Auto avrà una variabile aggiuntiva numeroPorte.
+    Moto avrà una variabile aggiuntiva haSidecar (boolean).
+Entrambe dovranno sovrascrivere il metodo descrivi() per fornire una descrizione dettagliata del veicolo.
+
+Nel Main crea gli oggetti
+Rivendita
+Auto/Moto
+Utilizzare i metodi di Rivendita per aggiungere e leggere gli elementi nella lista.
