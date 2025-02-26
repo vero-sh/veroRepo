@@ -2,10 +2,10 @@ package torreHanoi;
 
 import java.util.ArrayList;
 
-public class Pila <T> {
+public class Torre<T> {
     private ArrayList<T> pila;
 
-    public Pila(){
+    public Torre(){
         pila = new ArrayList<T>();
     }
 
