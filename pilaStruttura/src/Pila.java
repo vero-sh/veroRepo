@@ -19,6 +19,17 @@ public class Pila <T> {
         if(!pila.isEmpty()) return pila.get(pila.size()-1);
         return null;
     }
+    public boolean isEmpty(){
+        if(pila.isEmpty()) return true;
+        return false;
+    }
+    public int size(){
+        return pila.size();
+    }
 
-
+    @Override
+    public String toString() {
+        return "Pila{"+ pila +
+                '}';
+    }
 }
