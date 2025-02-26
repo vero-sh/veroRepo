@@ -12,7 +12,7 @@ public class Main {
         System.out.println(pila.isEmpty());
         System.out.println(pila);
         System.out.println(pila.size());
-        pila.pop();
+        System.out.println(pila.pop());
         System.out.println(pila);
         System.out.println(pila.size());
     }

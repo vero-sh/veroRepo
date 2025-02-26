@@ -1,0 +1,28 @@
+@startuml
+package torreHanoi{
+
+class Torre{
+-Arraylist<> pila : T
++push(T elemento) : void
++pop() : T
++top() : T
++isEmpty() : boolean
++size() : int
+}
+
+class Colonne{
+-torre1 : Torre
+-torre2 : Torre
+-torre2 : Torre
+-inizializzaDischi() : void
++stampaTorri() : String
+}
+
+}
+
+package Main{
+class main{
+}
+}
+
+@enduml
