@@ -15,7 +15,10 @@ class Colonne{
 -torre2 : Torre
 -torre2 : Torre
 -inizializzaDischi() : void
-+stampaTorri() : String
++stampaTorri() : void
+}
+class Disco{
+-dimensione : int
 }
 
 }
@@ -24,5 +27,7 @@ package Main{
 class main{
 }
 }
-
+Colonne --> Main
+Torre "3" o.. Colonne
+Disco o.. Torre
 @enduml
