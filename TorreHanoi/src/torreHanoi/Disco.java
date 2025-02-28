@@ -10,4 +10,11 @@ public class Disco {
     public int getDimensione() {
         return dimensione;
     }
+
+    @Override
+    public String toString() {
+        return "Disco{" +
+                "dimensione=" + dimensione +
+                '}';
+    }
 }

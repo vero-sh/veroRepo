@@ -1,33 +1,41 @@
 @startuml
 package torreHanoi{
 
-class Torre{
--Arraylist<> pila : T
-+push(T elemento) : void
-+pop() : T
-+top() : T
-+isEmpty() : boolean
-+size() : int
-}
+    abstract class Pila{
+    -Arraylist<> pila : T
+    +{abstract}push(T elemento) : void
+    +{abstract}pop() : T
+    +top() : T
+    +isEmpty() : boolean
+    +size() : int
+    }
 
-class Colonne{
--torre1 : Torre
--torre2 : Torre
--torre2 : Torre
--inizializzaDischi() : void
-+stampaTorri() : void
-}
-class Disco{
--dimensione : int
-}
+    class Colonna{
+    -nomeColonna: String
+    -dimensione: int
+    -inizializzaDischi() : void
+    +push(T elemento)) : void
 
+    }
+    class Disco{
+    -dimensione : int
+    }
+
+    Exception WrongDimensionException {
+
+    }
+    Class Exception{
+    }
 }
 
 package Main{
 class main{
 }
 }
-Colonne --> Main
-Torre "3" o.. Colonne
-Disco o.. Torre
+
+WrongDimensionException --> Exception
+Colonna --> main : Istanzia
+Colonna -- WrongDimensionException
+Pila <-- Colonna : <extends>
+Disco ..o Colonna
 @enduml

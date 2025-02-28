@@ -1,6 +1,5 @@
 package main;
 
-import torreHanoi.Colonne;
 import torreHanoi.Disco;
 
 public class Main {
