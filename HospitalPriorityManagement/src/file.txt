@@ -1,0 +1,17 @@
+Simulare un sistema di multi-priorità, ispirato al contesto ospedaliero del pronto soccorso.
+Pazienti con livelli di priorità diversi (Critico, Moderato, Basso) saranno inseriti in code separate e gestiti in ordine di urgenza,
+garantendo che i casi più critici vengano trattati per primi.
+Oggetti
+    Il sistema è progettato per gestire i pazienti che arrivano al pronto soccorso, classificandoli in tre categorie di priorità,
+    in base alla gravità della loro condizione. Queste categorie sono:
+
+        Critico (Rosso): Pazienti che necessitano di attenzione immediata per evitare danni gravi o la morte.
+        Questi pazienti vengono trattati per primi.
+
+        Moderato (Giallo): Pazienti che presentano sintomi significativi ma non immediatamente pericolosi per la vita.
+        Devono essere trattati nel breve periodo, ma non con urgenza immediata.
+
+        Basso (Verde): Pazienti con condizioni meno gravi, che possono attendere il loro turno senza rischio significativo per la salute.
+
+Ogni paziente è registrato con nome, cognome e il livello di priorità assegnato (Rosso, Giallo, Verde).
+A seconda di questa priorità, i pazienti vengono inseriti in diverse code, e il trattamento avviene seguendo l'ordine di urgenza stabilito.
