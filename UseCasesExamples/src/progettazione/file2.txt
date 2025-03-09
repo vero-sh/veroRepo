@@ -1,0 +1,26 @@
+Scenario: Gestione Biblioteca
+CD
+
+Il sistema di gestione della biblioteca è progettato per fornire un'organizzazione efficiente e una tracciabilità accurata delle risorse bibliotecarie.
+Al suo nucleo, il sistema è composto da tre classi principali: Libro, Utente e Biblioteca, ciascuna svolgendo un ruolo chiave nel funzionamento complessivo.
+
+PUNTO 1
+
+Classe Libro:
+Questa classe rappresenta un singolo libro presente nella biblioteca.
+Bisogna prevedere procedure atte a verificare la disponibilità di un certo libro nella biblioteca
+
+Classe Utente:
+La classe Utente identifica un individuo registrato presso la biblioteca.
+Bisogna permettere all’utente di effettuare un prestito di un libro specifico. Questa azione dovrà restituire un valore identificante la buona riuscita o il fallimento della procedura.
+Bisogna prevedere anche la possibilità di restituzione di uno specifico libro.
+
+Classe Biblioteca:
+La classe Biblioteca funge da contenitore per l'intero sistema, mantenendo l'elenco dei libri e degli utenti.
+
+PUNTO 2
+
+Estendiamo il sistema con la classe Prestito.
+Questa classe rappresenta un prestito effettuato da un utente per un determinato libro. Ogni istanza deve gestire un prestito di un certo libro di un certo utente.
+
+Con questa semplice aggiunta è possibile che la classe libro debba essere ristrutturata in modo da tenere traccia, per ogni libro, dei suoi prestiti

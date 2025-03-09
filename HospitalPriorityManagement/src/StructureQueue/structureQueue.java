@@ -5,6 +5,10 @@ import java.util.ArrayList;
 public class structureQueue <T>{
     private ArrayList<T> coda;
 
+    public structureQueue() {
+        coda = new ArrayList<>();
+    }
+
     public T pop(){
         if(!coda.isEmpty()) return coda.remove(0);
         return null;
@@ -21,5 +25,8 @@ public class structureQueue <T>{
     }
     public int size(){
         return coda.size();
+    }
+    public ArrayList<T> getElements() {
+        return coda;
     }
 }
