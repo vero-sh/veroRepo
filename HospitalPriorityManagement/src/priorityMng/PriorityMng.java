@@ -33,5 +33,14 @@ public class PriorityMng {
         }
         return s;
     }
+    public Paziente trattaPaziente(){
+        if(!code[2].isEmpty()) {
+            return code[2].pop();
+        }else if (!code[1].isEmpty()) {
+            return code[1].pop();
+        }else if (!code[0].isEmpty()){
+            return code[0].pop();
+        }else return null;
+    }
 
 }
