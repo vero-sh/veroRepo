@@ -1,0 +1,68 @@
+@startuml
+
+class Cliente {
+    -nome : String
+    -indirizzo : String
+}
+
+class Droide{
+    -modello : String
+}
+
+class Umano {
+    -eta : int
+}
+
+class Vip {
+    -eta : int
+    -bonus : double
+}
+
+class Contratto {
+    -ID : String
+    -dataI : String
+    -dataF : String
+    -importo : double
+    -cliente : Cliente
+    -listaPolizze : ArrayList<Polizza>
+    +addPolizza(p : Polizza) : void
+    +removePolizza(index : int) : void
+    +isScaduto() : boolean
+    +durata() : long
+}
+
+class Agenzia {
+    -nome : String
+    -listaPolizze : ArrayList<Polizza>
+    -listaContratti : ArrayList<Contratto>
+    -listaClienti : ArrayList<Cliente>
+    +contrattoValido(c : Contratto) : boolean
+    +durataContratto(c : Contratto) : long
+    +addCliente(c : Cliente) : void
+    +removeCliente(index : int) : void
+    +addContratto(c : Contratto) : void
+    +removeContratto(index : int) : void
+    +addPolizza(p : Polizza) : void
+    +removePolizza(index : int) : void
+}
+
+class Polizza {
+    -tipo : String
+    -testo : String
+}
+
+class RCNavicella extends Polizza
+class Furto extends Polizza
+class Vita extends Polizza
+
+Cliente <|-- Droide
+Cliente <|-- Umano
+Cliente <|-- Vip
+
+Contratto "1" *-- "1..*" Polizza
+Cliente "1" --o "1..*" Contratto
+Agenzia "1" o-- "1..*" Cliente
+Agenzia "1" o-- "1..*" Contratto
+Agenzia "1" o-- "1..*" Polizza
+
+@enduml
