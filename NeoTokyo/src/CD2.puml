@@ -27,6 +27,8 @@ class Contratto {
     -listaPolizze : ArrayList<Polizza>
     +addPolizza(p : Polizza) : void
     +removePolizza(index : int) : void
+    +addCliente(c : Cliente) : void
+    +removeCliente(index : int) : void
     +isScaduto() : boolean
     +durata() : long
 }
