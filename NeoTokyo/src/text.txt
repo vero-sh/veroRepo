@@ -1,0 +1,18 @@
+Fabbrica di Droidi di Naboo
+CD
+La Regina Amidala ha bisogno, unitamente al nuovo sistema di controllo planetario,
+di aprire una nuova fabbrica di droidi per dare supporto ai gravosi incarichi dei suoi collaboratori.
+
+Questa fabbrica gestisce da una a massimo dieci catene di produzione ed al suo interno vengono impiegati almeno 2 gruppi di manutenzione.
+Se la fabbrica viene smantellata, vengono smantellate anche le sue catene di produzione.
+
+Un gruppo di manutenzione, per semplicità, viene identificato dal suo nome e dal gruppo di droidi riparatori ad esso associato.
+La funzione di questo gruppo di manutenzione è quella di rilasciare droidi riparatori. Un gruppo gestisce almeno 3 e massimo 20 droidi.
+
+Una linea di produzione è composta da droidi di vario tipo ed al momento la Regina è interessata alla produzione di due tipi di droidi:
+quelli da Riparazione e quelli da Pattuglia Urbana.
+Tutti questi droidi hanno caratteristiche comuni come il modello,
+
+l'altezza e il codice identificativo ma hanno comportamenti specifici per quanto riguarda attivazione/disattivazione ed assemblaggio.
+I Droidi da Pattuglia Urbana, nello specifico hanno la possibilità di pianificare un itinerario per la pattuglia, mentre i droidi riparatori potranno riparare un droide.
+Si consegni secondo le modalità specificate

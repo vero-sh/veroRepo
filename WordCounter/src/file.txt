@@ -1,0 +1,5 @@
+In questa esercitazione, utilizzeremo una HashMap per contare quante volte ciascuna parola appare in un testo.
+
+ Ogni parola sarà la chive e il suo valore il numero di occorrenze.
+
+ Nel main chiedere all'utente di inserire il testo.
