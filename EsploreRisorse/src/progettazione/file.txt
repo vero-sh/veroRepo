@@ -1,0 +1,24 @@
+Scrivere un programma Java che simuli alcune funzionalità base di espelora risorse utilizzando la classe File.
+
+
+Il programma dovrà:
+
+    - L'utente inserisce un percorso e il programma elenca tutti i file e le cartelle presenti, specificando se sono directory [DIR ]o file [FILE].
+    - L'utente può scegliere una sottodirectory per esplorare il suo contenuto.
+    - L'utente deve poter creare un nuovo file di testo o una nuova cartella.
+    - L'utente deve poter eliminare un file o una cartella (se vuota).
+
+Per ogni file, il programma mostrerà dimensione, tipo (file o cartella), permessi di lettura/scrittura/esecuzione.
+
+    output:
+=== Esplora Risorse Java ===
+Percorso corrente: C:\Users\Utente\Documents
+1. Visualizza contenuto -------------------------------------------> comando DIR
+2. Entra in una cartella --------------------------------------------> comando CD
+3. Torna alla cartella precedente ----------------------------> comando CD
+4. Crea un nuovo file -----------------------------------------------> comando echo. > nomefile.txt
+5. Crea una nuova cartella --------------------------------------> comando mkdir
+6. Elimina un file/cartella ----------------------------------------> comando del nomefile / rmdir nomecartella
+7. Mostra informazioni su un file -----------------------------> comando dir nomefile
+8. Esci
+Scelta: _

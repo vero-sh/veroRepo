@@ -9,6 +9,7 @@ public class Main {
 
         RegistroElettronico registroElettronico = new RegistroElettronico();
 
+
         registroElettronico.addStudente("a", new Studente("Marco", "biffi", "320365480" , "marcobiffi@gmail.com"));
         registroElettronico.addStudente("ab", new Studente("Giulia", "Rossi", "327654321", "giuliarossi@example.com"));
         registroElettronico.addStudente("abc", new Studente("Luca", "Verdi", "335987654", "lucaverdi@example.com"));
@@ -21,6 +22,7 @@ public class Main {
         registroElettronico.addVoto("abcde", new Voto(6.25, "25/03/25", "Interrogazione"));
         registroElettronico.addVoto("a", new Voto(4.75, "30/03/25", "Esame Finale"));
 
+        registroElettronico.stampaRegistro();
 
     }
 }
