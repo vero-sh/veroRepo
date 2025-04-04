@@ -60,10 +60,11 @@ public class EsploraRisorse {
         return true;
     }
 
-    public boolean createDir() {
-        if (!directory.exists()) {
-            if (directory.mkdir()) {
-                System.out.println("directory created: " + directoryPath);
+    public boolean createDir(String nome) {
+        File tmp = new File(directoryPath, nome);
+        if (!tmp.exists()) {
+            if (tmp.mkdir()) {
+                System.out.println("directory created: " + tmp);
                 return true;
             } else {
                 System.out.println("cannot create a new directory");
@@ -95,5 +96,9 @@ public class EsploraRisorse {
             System.out.println("file / directory does not exist or not accessible");
         }
 
+    }
+
+    public String getDirectoryPath() {
+        return directoryPath;
     }
 }
