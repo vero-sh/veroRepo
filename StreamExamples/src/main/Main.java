@@ -8,38 +8,39 @@ public class Main {
 
         System.out.println("inserisci il path del file da leggere");
 
-        letturaTesto();
+        letturaPrimaParola();
 
     }
-    public static void letturaTesto(){
+
+    public static void letturaTesto() {
         InputStreamReader isr = new InputStreamReader(System.in);
         int carattere;
         System.out.println("Scrivi una parola: ");
 
         try {
-            while ((carattere = isr.read()) != 10 ){
+            while ((carattere = isr.read()) != 10) {
                 System.out.print((char) carattere);
             }
             isr.close();
-        } catch (IOException e){
+        } catch (IOException e) {
             throw new RuntimeException(e);
         }
     }
 
-    public static void letturaPrimaParola(){
+    public static void letturaPrimaParola() {
         InputStreamReader isr = new InputStreamReader(System.in);
-        BufferedReader br = new BufferedReader(isr);
-        int carattere;
-        System.out.println("Scrivi una frase: ");
-        String riga = "";
-
+        System.out.println("Inserisci una riga di testo:");
+        int input;
         try {
-            while ((riga = br.readLine()) != " "){
-                System.out.println(riga);
+            while ((input = isr.read()) != -1) {
+                System.out.print((char) input);
+                char c = (char) input;
+
+                if (c == ' ') {
+                    break;
+                }
             }
-            isr.close();
-            br.close();
-        } catch (IOException e){
+        } catch (IOException e) {
             throw new RuntimeException(e);
         }
     }
