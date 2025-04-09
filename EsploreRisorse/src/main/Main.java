@@ -23,7 +23,7 @@ public class Main {
             System.out.print("\nScegli un'azione (join, back, createFile, createDir, delete, showInfo, exit): ");
             String azione = scanner.nextLine();
 
-            switch (azione) {
+            switch (azione.toLowerCase()) {
                 case "join":
                     System.out.print("Inserisci il nome della directory da entrare: ");
                     String nomeDir = scanner.nextLine();
@@ -42,14 +42,14 @@ public class Main {
                     }
                     break;
 
-                case "createFile":
+                case "createfile":
                     System.out.print("Inserisci il nome del file da creare: ");
                     String nomeFile = scanner.nextLine();
                     File nuovoFile = new File(esploratore.getDirectoryPath(), nomeFile);
                     esploratore.createFile(nuovoFile);
                     break;
 
-                case "createDir":
+                case "createdir":
                     System.out.print("Inserisci il nome della directory da creare: ");
                     String nomeNuovaDir = scanner.nextLine();
                     esploratore.createDir(nomeNuovaDir);
@@ -65,7 +65,7 @@ public class Main {
                     }
                     break;
 
-                case "showInfo":
+                case "showinfo":
                     System.out.print("Inserisci il nome del file/directory di cui visualizzare le info: ");
                     String nomeInfo = scanner.nextLine();
                     esploratore.showFileInfo(nomeInfo);
