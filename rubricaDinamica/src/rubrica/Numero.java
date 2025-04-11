@@ -28,9 +28,8 @@ public class Numero {
 
     @Override
     public String toString() {
-        return "Numero{" +
-                "telefono='" + telefono + '\'' +
-                ", tipo='" + tipo + '\'' +
-                '}';
+        return "Numero" +
+                "telefono='" + telefono +
+                ", tipo='" + tipo;
     }
 }

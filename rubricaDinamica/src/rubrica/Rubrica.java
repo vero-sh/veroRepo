@@ -15,7 +15,7 @@ public class Rubrica {
     }
     private void ordina(){
         Contatto temp;
-        for(int i = 0; i<contatti.size(); i++){
+        for(int i = 0; i<contatti.size() -1; i++){
             if(contatti.get(i).getCognome().compareTo(contatti.get(i+1).getCognome())>0) {
                 temp = contatti.get(i);
                 contatti.set(i, contatti.get(i+1));
