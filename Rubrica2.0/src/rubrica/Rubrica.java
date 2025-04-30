@@ -27,11 +27,7 @@ public class Rubrica {
         String setupRes;
         String[] setup;
 
-        try {
-            resourcesPath = new File(getClass().getClassLoader().getResource("setup.txt").toURI());
-        } catch (URISyntaxException e) {
-            throw new RuntimeException(e);
-        }
+       resourcesPath = new File("src/resources/setup.txt");
 
         setupRes = FileEditor.read(resourcesPath);
 
@@ -44,7 +40,7 @@ public class Rubrica {
                 try {
                     autoInc = Integer.parseInt(setup[1].substring(14).trim());
                 } catch (NumberFormatException e) {
-                    // Se non c'è nessun valore dopo "AutInc value:", rimane 0
+
                     System.out.println("Nessun valore di autoInc trovato, impostato a 0");
                 }
             } else {
@@ -60,21 +56,6 @@ public class Rubrica {
         autoInc = 0;
 
 
-        File destFile = new File(SavingDir, "setup.txt");
-        if (!destFile.exists()) {
-            try (InputStream in = getClass().getClassLoader().getResourceAsStream("setup.txt");
-                 OutputStream out = new FileOutputStream(destFile)) {
-                byte[] buffer = new byte[1024];
-                int length;
-                while ((length = in.read(buffer)) > 0) {
-                    out.write(buffer, 0, length);
-                }
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
-
-
         do {
             System.out.print("Inserisci il percorso assoluto della cartella dove salvare i tuoi contatti: ");
             SavingDir = sc.next();
@@ -82,7 +63,7 @@ public class Rubrica {
 
 
         String contenuto = "Saving dir: " + SavingDir + "\nAutInc value: " + autoInc;
-        FileEditor.write(destFile, contenuto);
+        FileEditor.write(resourcesPath ,contenuto);
     }
 
 
