@@ -14,7 +14,7 @@ public class Main {
             }
 
         } catch (IOException e) {
-            System.err.println("Errore nella lettura del file: " + e.getMessage());
+            System.out.println("Errore nella lettura del file: " + e.getMessage());
         }
     }
 }
