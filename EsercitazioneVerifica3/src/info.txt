@@ -1,0 +1,3 @@
+Esercizio 3
+Utilizzando FileWriter scrivere un programma che chiede all'utente di inserire cinque righe di testo
+e le salva su un file di testo chiamato input.txt, se il file non esiste crearlo.
