@@ -12,6 +12,7 @@ public class Main {
             while ((line = bf.readLine()) != null){
                 System.out.print(line);
             }
+
         } catch (IOException e) {
             System.err.println("Errore nella lettura del file: " + e.getMessage());
         }
