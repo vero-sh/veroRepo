@@ -10,6 +10,6 @@
 📌 Progetti principali:
 - CRUD java
 - [Win11-Debloat](https://github.com/vero-sh/veroRepo/tree/main/testPS)
-- [Sito personale](https://github.com/vero-sh/htmlproject)
+- [Sito personale](https://github.com/vero-sh/veroRepo/tree/main/GestionaleCRUD)
 
 📫 Contatti: ...
