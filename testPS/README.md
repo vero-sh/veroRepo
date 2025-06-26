@@ -2,7 +2,8 @@ Before running create a restore point and a backup of your registry(regedit)
 
 YOU HAVE TO OPEN POWERSHELL AS ADMINISTRATOR AND NAVIGATE(cd) TO THE DIRECTORY WHERE YOU PUT THE FILES AND RUN THIS COMMAND:
 -----------------------------------------------------------------------------------------------------------------------
-./crTweak_source.ps1 \n
+./crTweak_source.ps1 
+
 ./crTweakFivem_source.ps1
 -----------------------------------------------------------------------------------------------------------------------
 
