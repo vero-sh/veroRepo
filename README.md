@@ -8,8 +8,8 @@
 - 🔒 Script di debloat, monitoring, automazione
 
 📌 Progetti principali:
-- CRUD java
+- Website
 - [Win11-Debloat](https://github.com/vero-sh/veroRepo/tree/main/testPS)
-- [Sito personale](https://github.com/vero-sh/veroRepo/tree/main/GestionaleCRUD)
+- [Gestionale-CRUD](https://github.com/vero-sh/veroRepo/tree/main/GestionaleCRUD)
 
 📫 Contatti: ...
