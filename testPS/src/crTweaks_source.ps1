@@ -113,7 +113,7 @@ $servicesList = @(
     @{Name="AxInstSV"; StartupType="Manual"},
     @{Name="BDESVC"; StartupType="Manual"},
     @{Name="BFE"; StartupType="Automatic"},
-    @{Name="BITS"; StartupType="AutomaticDelayedStart"},
+    @{Name="BITS"; StartupType="Automatic"},
     @{Name="BTAGService"; StartupType="Manual"},
     @{Name="BcastDVRUserService_*"; StartupType="Manual"},
     @{Name="BluetoothUserService_*"; StartupType="Manual"},
@@ -176,7 +176,7 @@ $servicesList = @(
     @{Name="LxpSvc"; StartupType="Manual"},
     @{Name="MSDTC"; StartupType="Manual"},
     @{Name="MSiSCSI"; StartupType="Manual"},
-    @{Name="MapsBroker"; StartupType="AutomaticDelayedStart"},
+    @{Name="MapsBroker"; StartupType="Automatic"},
     @{Name="McpManagementService"; StartupType="Manual"},
     @{Name="MessagingService_*"; StartupType="Manual"},
     @{Name="MicrosoftEdgeElevationService"; StartupType="Manual"},
@@ -280,7 +280,7 @@ $servicesList = @(
     @{Name="WManSvc"; StartupType="Manual"},
     @{Name="WPDBusEnum"; StartupType="Manual"},
     @{Name="WSService"; StartupType="Manual"},
-    @{Name="WSearch"; StartupType="AutomaticDelayedStart"},
+    @{Name="WSearch"; StartupType="Automatic"},
     @{Name="WaaSMedicSvc"; StartupType="Manual"},
     @{Name="WalletService"; StartupType="Manual"},
     @{Name="WarpJITSvc"; StartupType="Manual"},
@@ -341,7 +341,7 @@ $servicesList = @(
     @{Name="shpamsvc"; StartupType="Disabled"},
     @{Name="smphost"; StartupType="Manual"},
     @{Name="spectrum"; StartupType="Manual"},
-    @{Name="sppsvc"; StartupType="AutomaticDelayedStart"},
+    @{Name="sppsvc"; StartupType="Automatic"},
     @{Name="ssh-agent"; StartupType="Disabled"},
     @{Name="svsvc"; StartupType="Manual"},
     @{Name="swprv"; StartupType="Manual"},
@@ -370,13 +370,14 @@ $servicesList = @(
     @{Name="wlpasvc"; StartupType="Manual"},
     @{Name="wmiApSrv"; StartupType="Manual"},
     @{Name="workfolderssvc"; StartupType="Manual"},
-    @{Name="wscsvc"; StartupType="AutomaticDelayedStart"},
+    @{Name="wscsvc"; StartupType="AAutomatic"},
     @{Name="wuauserv"; StartupType="Manual"},
     @{Name="wudfsvc"; StartupType="Manual"}
 )
 Apply-ServiceTweaks $servicesList
 
 # Disabilita Cortana
+Get-AppxPackage -Name Microsoft.549981C3F5F10 | Remove-AppxPackage
 Write-Host "`nDisabilitazione Cortana..." -ForegroundColor Cyan
 Write-Host "`nTutte le modifiche sono state applicate con successo!" -ForegroundColor Green
 Write-Host "Si consiglia un riavvio del sistema per completare le operazioni." -ForegroundColor Yellow
