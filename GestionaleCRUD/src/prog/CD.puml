@@ -1,0 +1,34 @@
+@startuml
+title Class Diagram - Employee Management System
+
+class Employee {
+  - id : int
+  - name : String
+  - surname : String
+  - email : String
+  - hireDate : Date
+  - salary : double
+}
+
+class EmployeeDAO {
+  + create(emp : Employee) : void
+  + findAll() : List<Employee>
+  + update(emp : Employee) :void
+  + delete(id : int) : void
+}
+
+class Main {
+  + main(args : String[])
+  --
+  + lista()
+  + aggiungi()
+  + modifica()
+  + elimina()
+}
+
+
+Main --> EmployeeDAO : uses
+EmployeeDAO --> Employee : manages
+EmployeeDAO --> MySQL : JDBC
+
+@enduml

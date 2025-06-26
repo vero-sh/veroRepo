@@ -1,0 +1,7 @@
+Before running create a restore point and a backup of your registry(regedit)
+
+YOU HAVE TO RUN THE BLUE ONE
+
+1 - crTweak = run it if you don't play Fivem. Ideal for every game except Fivem.
+
+2 - crTweakFivem = run it only if you play Fivem (it doesn't stop important processes for SS)

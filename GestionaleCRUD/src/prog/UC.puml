@@ -1,0 +1,55 @@
+@startuml
+title Class Diagram - Employee Management System
+
+class Employee {
+  - id : int
+  - name : String
+  - surname : String
+  - email : String
+  - hireDate : Date
+  - salary : double
+}
+
+class EmployeeDAO {
+  + create(emp : Employee)
+  + findAll() : List<Employee>
+  + update(emp : Employee)
+  + delete(id : int)
+}
+
+class Main {
+  + main(args : String[])
+  --
+  + lista()
+  + aggiungi()
+  + modifica()
+  + elimina()
+}
+
+database MySQL
+
+Main --> EmployeeDAO : uses
+EmployeeDAO --> Employee : manages
+EmployeeDAO --> MySQL : JDBC
+
+@enduml
+
+@startuml
+left to right direction
+title Use‑Case Diagram - Employee Management System
+
+actor "HR Manager" as HR
+
+rectangle "Employee Management System" {
+  usecase "Add Employee" as UC_Add
+  usecase "View Employees" as UC_View
+  usecase "Update Employee" as UC_Update
+  usecase "Delete Employee" as UC_Delete
+}
+
+HR --> UC_Add
+HR --> UC_View
+HR --> UC_Update
+HR --> UC_Delete
+
+@enduml
