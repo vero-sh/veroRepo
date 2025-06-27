@@ -1,5 +1,0 @@
-Utilizzando BufferedReader e BufferedWriter scrivere un programma in Java che
-consenta all’utente di effettuare la copia del contenuto di un file di testo. In particolare,
-il programma deve chiedere all’utente di specificare il nome del file,
-da cui leggere i dati, e il nome del file, su cui scrivere i dati copiati.
-Se il file di destinazione non esiste crearlo.

@@ -1,3 +1,0 @@
-Esercizio 1
-Utilizzando FileReader scrivere un programma che legge da un file di
-testo chiamato input.txt e stampi a schermo il suo contenuto.

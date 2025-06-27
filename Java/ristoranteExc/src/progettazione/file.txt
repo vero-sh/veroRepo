@@ -1,0 +1,19 @@
+Possibili eccezioni:
+
+    Blackout (prob 10%)
+    Mancano ingredienti
+    Rifornimento (30%)
+
+Ipotesi:
+    Classe Piatto
+        Nome
+        Ingredienti (int)
+       tempo di preparazione
+
+    Classe Ristorante
+        gestisce un menu
+        serve un piatto random
+
+STILE
+    lancia il prima possibile, gestisci più in là possibile
+    MAI CATCH DI EXCEPTION

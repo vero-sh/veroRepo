@@ -1,8 +1,0 @@
-Scrivere un programma che legga il testo inserito dall'utente fino a quando non viene premuto il tasto "invio",
-utilizzando InputStreamReader. Stampare il testo a video.
-
-Utilizzando InputStreamReader, scrivere il programma che legge solo la prima parola, come sc.next().
-Stampare il testo a video.
-
-Utilizzando InputStreamReader, scrivere il programma che legge un numero intero come sc.nextInt().
-Se il valore inserito non è un numerio intero gestire l'errore. Stampare il numero inserito.

@@ -1,0 +1,21 @@
+Scrivere un programma in Java che implementi il gioco della Torre di Hanoi.
+La Torre di Hanoi è composta da tre torri e un certo numero di dischi (almeno 3) di grandezza decrescente,
+che possono essere impilati in uno qualsiasi delle torri.
+Il gioco inizia con tutti i dischi incolonnati sulla prima torre in ordine decrescente, in modo da formare “un cono”.
+Lo scopo del gioco è portare tutti i dischi su una torre diversa da quella iniziale,
+potendo spostare solo un disco alla volta e potendo mettere un disco solo su un altro disco più grande, mai su uno più piccolo.
+
+Il programma deve essere strutturato nel modo seguente:
+Main
+    Gestione del menu
+    Controllo sullo spostamente dei dischi
+    Contare il numero di mosse
+
+Classe Pila → Come visto a lezione , è la Torre
+
+Classe Colonne:
+    Contiene le tre torri
+    Inizializza i dischi sulle torri
+    Stampa le torri
+Lo studente dovrà integrare la struttura sopra riportata motivando le scelte fatte.
+

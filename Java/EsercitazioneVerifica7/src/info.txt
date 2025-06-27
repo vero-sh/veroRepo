@@ -1,0 +1,4 @@
+Utilizzando RandomAccessFile scrivere un programma che legge da un file di testo chiamato input.txt
+una riga alla volta e salva il contenuto in una HashMap.
+ Chiedere all'utente scegliere e modificare una riga.
+ Salvare il contenuto modificato sul file di testo chiamato input.txt

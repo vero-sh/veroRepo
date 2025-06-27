@@ -1,0 +1,19 @@
+@startuml
+' Interfaccia Calcolatrice
+interface Calcolatrice {
+  + add(a: double, b: double): double
+  + subtract(a: double, b: double): double
+  + multiply(a: double, b: double): double
+  + divide(a: double, b: double): double
+}
+
+' Classe che implementa l'interfaccia
+class CalcolatriceConcreta {
+  + add(a: double, b: double): double
+  + subtract(a: double, b: double): double
+  + multiply(a: double, b: double): double
+  + divide(a: double, b: double): double
+}
+
+Calcolatrice <|.. CalcolatriceConcreta
+@enduml

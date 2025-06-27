@@ -1,0 +1,23 @@
+@startuml
+class Libro{
+    -titolo : String
+}
+
+class Utente{
+    -nome : String
+    -cognome : String
+    +effettuaPrestito(libro : Libro) : boolean
+    +effettuaRestituzione(libro : Libro) : void
+}
+
+class Biblioteca{
+    -nome : String
+    -listaLibri : ArrayList<Libro>
+    -listaUtenti : ArrayList<Utente>
+    +cercaLibro(titolo : String) : int
+}
+
+Libro --* Biblioteca
+Utente --* Biblioteca
+
+@enduml
