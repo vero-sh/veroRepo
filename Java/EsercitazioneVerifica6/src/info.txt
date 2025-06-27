@@ -1,3 +1,0 @@
-Scrivere un programma che legge da un file di testo chiamato
-input.txt e conti quante parole contiene e stampa il numero a video.
-Le parole sono separate da uno spazio.
