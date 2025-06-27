@@ -9,7 +9,7 @@
 
 📌 Progetti principali:
 - Sito web
-- [Win11-Debloat](https://github.com/vero-sh/veroRepo/tree/main/testPS)
-- [Gestionale-CRUD](https://github.com/vero-sh/veroRepo/tree/main/GestionaleCRUD)
+- [Win11-Debloat](https://github.com/vero-sh/veroRepo/tree/main/Powershell%20%26%20Batch/testPS)
+- [Gestionale-CRUD](https://github.com/vero-sh/veroRepo/tree/main/Java/GestionaleCRUD)
 
 📫 Contatti: ...
