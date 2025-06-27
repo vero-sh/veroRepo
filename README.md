@@ -1,4 +1,4 @@
-# Hi 👋 I'm Vero!
+# Hi I'm Vero!
 
 👨‍💻 Computer science student with a passion for IT, cybersecurity, and scripting.
 
