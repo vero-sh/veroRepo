@@ -1,6 +1,6 @@
 # Ciao 👋 Sono Vero!
 
-👨‍💻 Studente di informatica (4ª superiore) con passione per l’IT, la cybersecurity e lo scripting.
+👨‍💻 Studente di informatica con passione per l’IT, la cybersecurity e lo scripting.
 
 🔧 Competenze:
 - 🖥️ Java, Powershell, Bash, HTML/CSS
@@ -8,7 +8,7 @@
 - 🔒 Script di debloat, monitoring, automazione
 
 📌 Progetti principali:
-- Website
+- Sito web
 - [Win11-Debloat](https://github.com/vero-sh/veroRepo/tree/main/testPS)
 - [Gestionale-CRUD](https://github.com/vero-sh/veroRepo/tree/main/GestionaleCRUD)
 

@@ -1,7 +1,10 @@
 Before running create a restore point and a backup of your registry(regedit)
 
-YOU HAVE TO RUN THE BLUE ONE
+RUN crTweaks.bat as Administrator:
 
-1 - crTweak = run it if you don't play Fivem. Ideal for every game except Fivem.
+You will see 2 options:
 
-2 - crTweakFivem = run it only if you play Fivem (it doesn't stop important processes for SS)
+option 1 : for everyone
+option 2 : use it if you play fivem
+
+OPTION 2 does not stop processes needed for SS (DiagTrack and PcaSvc) 
