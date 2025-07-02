@@ -6,7 +6,7 @@ import java.util.*;
 public class EmployeeDAO {
     private static final String URL = "jdbc:mysql://localhost:3306/company_db?serverTimezone=UTC";
     private static final String USER = "root";
-    private static final String PASSWORD = "Cristante.100!";
+    private static final String PASSWORD = "root";
 
     public void create(Employee emp) throws SQLException {
         String sql = "INSERT INTO employees (name, surname, email, hire_date, salary) VALUES (?, ?, ?, ?, ?)";
