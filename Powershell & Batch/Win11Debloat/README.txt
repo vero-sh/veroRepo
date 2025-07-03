@@ -1,3 +1,4 @@
+This script will modify some registry keys!
 Before running create a restore point and a backup of your registry(regedit)
 
 RUN crTweaks.bat as Administrator:
