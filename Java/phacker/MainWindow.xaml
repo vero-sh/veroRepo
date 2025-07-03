@@ -1,0 +1,17 @@
+<!-- MainWindow.xaml -->
+<Window>
+    <TabControl>
+        <TabItem Header="Processi">
+            <DataGrid x:Name="ProcessGrid" AutoGenerateColumns="False">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="PID" Binding="{Binding Pid}"/>
+                    <DataGridTextColumn Header="Nome" Binding="{Binding Name}"/>
+                    <DataGridTextColumn Header="CPU%" Binding="{Binding CpuUsage}"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </TabItem>
+        <TabItem Header="Memoria">
+            <MemoryMapViewer/>
+        </TabItem>
+    </TabControl>
+</Window>
