@@ -9,7 +9,7 @@
 
 📌 Main Projects:
 - Personal website  
-- [Win11-Debloat](https://github.com/vero-sh/veroRepo/tree/main/Powershell%20%26%20Batch/testPS)  
+- [Win11-Debloat](https://github.com/vero-sh/veroRepo/tree/main/Powershell%20%26%20Batch/Win11Debloat)  
 - [CRUD Management System](https://github.com/vero-sh/veroRepo/tree/main/Java/GestionaleCRUD)  
 
 📫 Contact: ...
