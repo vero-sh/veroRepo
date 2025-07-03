@@ -20,7 +20,7 @@ for /f "delims=: tokens=*" %%x in ('findstr /b ::: "%~f0"') do @echo(%%x
 chcp 1252 > nul
 
 :: === URL DEGLI SCRIPT ===
-set "URL1=https://raw.githubusercontent.com/vero-sh/veroRepo/refs/heads/main/testPS/src/ crTweaks_source.ps1"
+set "URL1=https://raw.githubusercontent.com/vero-sh/veroRepo/refs/heads/main/testPS/src/crTweaks_source.ps1"
 set "URL2=https://raw.githubusercontent.com/vero-sh/veroRepo/refs/heads/main/testPS/src/crTweaksFivem_source.ps1"
 
 :: Menu
