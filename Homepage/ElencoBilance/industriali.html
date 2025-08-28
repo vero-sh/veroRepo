@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elenco bilance industriali omologate</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome per le icone -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            padding-top: 20px;
+            padding-bottom: 40px;
+        }
+        .header {
+            background-color: #343a40;
+            color: white;
+            padding: 20px 0;
+            margin-bottom: 30px;
+            border-radius: 5px;
+        }
+        .table-container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .table-responsive {
+            overflow-x: auto;
+        }
+        th {
+            background-color: #343a40;
+            color: white;
+            position: sticky;
+            top: 0;
+        }
+        .btn-back {
+            margin-bottom: 20px;
+        }
+        @media (max-width: 768px) {
+            .table thead {
+                display: none;
+            }
+            .table, .table tbody, .table tr, .table td {
+                display: block;
+                width: 100%;
+            }
+            .table tr {
+                margin-bottom: 15px;
+                border: 1px solid #ddd;
+            }
+            .table td {
+                text-align: right;
+                padding-left: 50%;
+                position: relative;
+            }
+            .table td::before {
+                content: attr(data-label);
+                position: absolute;
+                left: 10px;
+                width: 45%;
+                padding-right: 10px;
+                font-weight: bold;
+                text-align: left;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header text-center">
+            <h1><i class="fas fa-weight-hanging"></i> Elenco bilance industriali omologate</h1>
+            <p class="lead">Specifiche tecniche complete</p>
+        </div>
+
+        <a href="index.html" class="btn btn-dark btn-back">
+            <i class="fas fa-arrow-left"></i> Torna alla selezione
+        </a>
+
+        <div class="table-container">
+            <div class="table-responsive">
+                <table class="table table-striped table-bordered table-hover">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>MOD</th>
+                            <th>Max1</th>
+                            <th>Max2</th>
+                            <th>e1</th>
+                            <th>e2</th>
+                            <th>Min1</th>
+                            <th>Min2</th>
+                            <th>T</th>
+                            <th>°C</th>
+                            <th>CERT</th>
+                            <th>CLASS</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>ADW</td><td>6 kg</td><td>--</td><td>2 g</td><td>--</td><td>40 g</td><td>--</td><td>- Max</td><td>0 °C / +40 °C</td><td>No. 0200-NAWI-15331</td><td>Classe-III</td></tr>
+                        <tr><td>ADW</td><td>15 kg</td><td>--</td><td>5 g</td><td>--</td><td>100 g</td><td>--</td><td>- Max</td><td>0 °C / +40 °C</td><td>No. 0200-NAWI-15331</td><td>Classe-III</td></tr>
+                        <tr><td>AFS</td><td>150 kg</td><td>--</td><td>50 g</td><td>--</td><td>1 kg</td><td>--</td><td>- 49,95 kg</td><td>0 °C / +40 °C</td><td>T8319</td><td>Classe-III</td></tr>
+                        <tr><td>AGS</td><td>3 kg</td><td>--</td><td>1 g</td><td>--</td><td>20 g</td><td>--</td><td>- Max</td><td>0 °C / +40 °C</td><td>No. 0200-NAWI-15331</td><td>Classe-III</td></tr>
+                        <tr><td>AGS</td><td>6 kg</td><td>--</td><td>2 g</td><td>--</td><td>40 g</td><td>--</td><td>- Max</td><td>0 °C / +40 °C</td><td>No. 0200-NAWI-15331</td><td>Classe-III</td></tr>
+                        <tr><td>AGS</td><td>15 kg</td><td>--</td><td>5 g</td><td>--</td><td>100 g</td><td>--</td><td>- Max</td><td>0 °C / +40 °C</td><td>No. 0200-NAWI-15331</td><td>Classe-III</td></tr>
+                        <tr><td>ALE</td><td>2200 g</td><td>--</td><td>0,1 g  d = 0,01 g</td><td>--</td><td>0,5 g</td><td>--</td><td>-Max</td><td>+5 °C / +35 °C</td><td>T11024</td><td>Classe-II</td></tr>
+                        <tr><td>ALE</td><td>3200 g</td><td>--</td><td>0,1 g  d = 0,01 g</td><td>--</td><td>0,5 g</td><td>--</td><td>-Max</td><td>+5 °C / +35 °C</td><td>T11024</td><td>Classe-II</td></tr>
+                        <tr><td>APS</td><td>6 kg</td><td></td><td>2 g</td><td></td><td>40 g</td><td></td><td>- Max</td><td>0 °C / +40 °C</td><td>T8319</td><td>Classe-III</td></tr>
+                        <tr><td>APS</td><td>15 kg</td><td></td><td>5 g</td><td></td><td>100 g</td><td></td><td>- Max</td><td>0 °C / +40 °C</td><td>T8319</td><td>Classe-III</td></tr>
+                        <tr><td>APS</td><td>30 kg</td><td></td><td>10 g</td><td></td><td>200 g</td><td></td><td>- Max</td><td>0 °C / +40 °C</td><td>T8319</td><td>Classe-III</td></tr>
+                        <tr><td>AQM</td><td>3 kg</td><td>--</td><td>1 g</td><td>--</td><td>20 g</td><td>--</td><td>- Max</td><td>0 °C / +40 °C</td><td>T8006</td><td>Classe-III</td></tr>
+                        <tr><td>AWX</td><td>10 kg</td><td>--</td><td>2 g</td><td>--</td><td>40 g</td><td>--</td><td>- Max</td><td>-10 °C / +40 °C</td><td>T11486</td><td>Classe-III</td></tr>
+                        <tr><td>AWX</td><td>25 kg</td><td>--</td><td>5 g</td><td>--</td><td>100 g</td><td>--</td><td>- Max</td><td>-10 °C / +40 °C</td><td>T11486</td><td>Classe-III</td></tr>
+                        <tr><td>JPP</td><td>3/6 kg</td><td>--</td><td>1/2 g</td><td>--</td><td>20 g</td><td>--</td><td>- Max</td><td>-10 °C / +40 °C</td><td>No. 0200-NAWI-04486</td><td>Classe-III</td></tr>
+                        <tr><td>JPP</td><td>6/15 kg</td><td>--</td><td>2/5 g</td><td>--</td><td>40 g</td><td>--</td><td>- Max</td><td>-10 °C / +40 °C</td><td>No. 0200-NAWI-04486</td><td>Classe-III</td></tr>
+                        <tr><td>JPP</td><td>15/30 kg</td><td>--</td><td>5/10 g</td><td>--</td><td>100 g</td><td>--</td><td>- Max</td><td>-10 °C / +40 °C</td><td>No. 0200-NAWI-04486</td><td>Classe-III</td></tr>
+                        <tr><td>LPP</td><td>3/6 kg</td><td>--</td><td>1/2 g</td><td>--</td><td>20 g</td><td>--</td><td>- Max</td><td>-10 °C / +40 °C</td><td>No. 0200-NAWI-16952</td><td>Classe-III</td></tr>
+                        <tr><td>LPP</td><td>6/15 kg</td><td>--</td><td>2/5 g</td><td>--</td><td>40 g</td><td>--</td><td>- Max</td><td>-10 °C / +40 °C</td><td>No. 0200-NAWI-16952</td><td>Classe-III</td></tr>
+                        <tr><td>LPP</td><td>15/30 kg</td><td>--</td><td>5/10 g</td><td>--</td><td>100 g</td><td>--</td><td>- Max</td><td>-10 °C / +40 °C</td><td>No. 0200-NAWI-16952</td><td>Classe-III</td></tr>
+                        <tr><td>NHB</td><td>150 g</td><td>--</td><td>0,02 g  d = 0,002 g</td><td>--</td><td>0,04 g</td><td>--</td><td>-149,98 g</td><td>+5 °C / +40 °C</td><td>No. 0200-NAWI-8351 Rev.2</td><td>Classe-II</td></tr>
+                        <tr><td>NHB</td><td>300 g</td><td>--</td><td>0,05 g  d = 0,005 g</td><td>--</td><td>0,10 g</td><td>--</td><td>-299,5 g</td><td>+5 °C / +40 °C</td><td>No. 0200-NAWI-8351 Rev.2</td><td>Classe-II</td></tr>
+                        <tr><td>NHB</td><td>600 g</td><td>--</td><td>0,1 g  d = 0,01 g</td><td>--</td><td>0,50 g</td><td>--</td><td>-599,9 g</td><td>+5 °C / +40 °C</td><td>No. 0200-NAWI-8351 Rev.2</td><td>Classe-II</td></tr>
+                        <tr><td>NHB</td><td>1500 g</td><td>--</td><td>0,2 g  d = 0,02 g</td><td>--</td><td>1 g</td><td>--</td><td>-1499,8 g</td><td>+5 °C / +40 °C</td><td>No. 0200-NAWI-8351 Rev.2</td><td>Classe-II</td></tr>
+                        <tr><td>NHB</td><td>3000 g</td><td>--</td><td>0,5 g  d = 0,05 g</td><td>--</td><td>2,50 g</td><td>--</td><td>-Max</td><td>+5 °C / +40 °C</td><td>No. 0200-NAWI-8351 Rev.2</td><td>Classe-II</td></tr>
+                        <tr><td>NHB</td><td>6000 g</td><td>--</td><td>1 g  d = 0,1 g</td><td>--</td><td>5 g</td><td>--</td><td>-5999 g</td><td>+5 °C / +40 °C</td><td>No. 0200-NAWI-8351 Rev.2</td><td>Classe-II</td></tr>
+                        <tr><td>TPR-WB</td><td>2000 kg</td><td>--</td><td>1000 g</td><td>--</td><td>20 kg</td><td></td><td>-Max</td><td>-10 °C / +40 °C</td><td>No. 0200-NAWI-03170</td><td>Classe-III</td></tr>
+                        <tr><td>TPS</td><td>2000 kg</td><td>--</td><td>1000 g</td><td>--</td><td>20 kg</td><td></td><td>-Max</td><td>-10 °C / +40 °C</td><td>No. 0200-NAWI-10588 Rev.1</td><td>Classe-III</td></tr>
+                        <tr><td>TICKET</td><td>6/15 kg</td><td>--</td><td>2/5 g</td><td>--</td><td>40 g</td><td>--</td><td>-Max</td><td>-10 °C / +40 °C</td><td>UK 3091</td><td>Classe-III</td></tr>
+                        <tr><td>TICKET</td><td>15/30 kg</td><td>--</td><td>5/10 g</td><td>--</td><td>100 g</td><td>--</td><td>-Max</td><td>-10 °C / +40 °C</td><td>UK 3091</td><td>Classe-III</td></tr>
+                        <tr><td>W100</td><td>3/6 kg</td><td>--</td><td>1/2 g</td><td>--</td><td>10 g</td><td>--</td><td>-Max</td><td>-10 °C / +40 °C</td><td>No. 0200-NAWI-18720</td><td>Classe-III</td></tr>
+                        <tr><td>W100</td><td>6/15 kg</td><td>--</td><td>2/5 g</td><td>--</td><td>40 g</td><td>--</td><td>-Max</td><td>-10 °C / +40 °C</td><td>No. 0200-NAWI-18720</td><td>Classe-III</td></tr>
+                        <tr><td>W100</td><td>15/30 kg</td><td>--</td><td>5/10 g</td><td>--</td><td>100 g</td><td>--</td><td>-Max</td><td>-10 °C / +40 °C</td><td>No. 0200-NAWI-18720</td><td>Classe-III</td></tr>
+                        <tr><td>W100</td><td>30 kg</td><td>--</td><td>10 g</td><td>--</td><td>200 g</td><td>--</td><td>-Max</td><td>-10 °C / +40 °C</td><td>No. 0200-NAWI-18720</td><td>Classe-III</td></tr>
+                        <tr><td>W100</td><td>30/60 kg</td><td>--</td><td>10/20 g</td><td>--</td><td>200 g</td><td>--</td><td>-Max</td><td>-10 °C / +40 °C</td><td>No. 0200-NAWI-18720</td><td>Classe-III</td></tr>
+                        <tr><td>W100</td><td>60 kg</td><td>--</td><td>20 g</td><td>--</td><td>400 g</td><td>--</td><td>-Max</td><td>-10 °C / +40 °C</td><td>No. 0200-NAWI-18720</td><td>Classe-III</td></tr>
+                        <tr><td>W100</td><td>60/150 kg</td><td>--</td><td>20/50 g</td><td>--</td><td>400 g</td><td>--</td><td>-Max</td><td>-10 °C / +40 °C</td><td>No. 0200-NAWI-18720</td><td>Classe-III</td></tr>
+                        <tr><td>W100</td><td>150 kg</td><td>--</td><td>50 g</td><td>--</td><td>1000 g</td><td>--</td><td>-Max</td><td>-10 °C / +40 °C</td><td>No. 0200-NAWI-18720</td><td>Classe-III</td></tr>
+                        <tr><td>W100</td><td>300 kg</td><td>--</td><td>100 g</td><td>--</td><td>2000 g</td><td>--</td><td>-Max</td><td>-10 °C / +40 °C</td><td>No. 0200-NAWI-18720</td><td>Classe-III</td></tr>
+                        <tr><td>W100</td><td>150/300 kg</td><td>--</td><td>50/100 g</td><td>--</td><td>1000 g</td><td>--</td><td>-Max</td><td>-10 °C / +40 °C</td><td>No. 0200-NAWI-18720</td><td>Classe-III</td></tr>
+                        <tr><td>W100</td><td>300/600 Kg</td><td>--</td><td>100/200 g</td><td>--</td><td>2 kg</td><td>--</td><td>-Max</td><td>-10 °C / +40 °C</td><td>No. 0200-NAWI-18720</td><td>Classe-III</td></tr>
+                        <tr><td>W100</td><td>600 kg</td><td>--</td><td>200 g</td><td>--</td><td>4 kg</td><td>--</td><td>-Max</td><td>-10 °C / +40 °C</td><td>No. 0200-NAWI-18720</td><td>Classe-III</td></tr>
+                        <tr><td>W100</td><td>600/1500 kg</td><td>--</td><td>200/500 g</td><td>--</td><td>4 kg</td><td>--</td><td>-Max</td><td>-10 °C / +40 °C</td><td>No. 0200-NAWI-18720</td><td>Classe-III</td></tr>
+                        <tr><td>W100</td><td>1500 Kg</td><td>--</td><td>500 g</td><td>--</td><td>10 kg</td><td>--</td><td>-Max</td><td>-10 °C / +40 °C</td><td>No. 0200-NAWI-18720</td><td>Classe-III</td></tr>
+                        <tr><td>W100</td><td>1500/3000 kg</td><td>--</td><td>500/1000 g</td><td>--</td><td>10 kg</td><td>--</td><td>-Max</td><td>-10 °C / +40 °C</td><td>No. 0200-NAWI-18720</td><td>Classe-III</td></tr>
+                        <tr><td>W100</td><td>3000 kg</td><td>--</td><td>1000 g</td><td>--</td><td>20 kg</td><td>--</td><td>-Max</td><td>-10 °C / +40 °C</td><td>No. 0200-NAWI-18720</td><td>Classe-III</td></tr>
+                        <tr><td>W100</td><td>2500/5000 kg</td><td>--</td><td>1000/2000 g</td><td>--</td><td>20 kg</td><td>--</td><td>-Max</td><td>-10 °C / +40 °C</td><td>No. 0200-NAWI-18720</td><td>Classe-III</td></tr>
+                        <tr><td>W100</td><td>2000 kg</td><td>--</td><td>500 g</td><td>--</td><td>10 kg</td><td>--</td><td>-Max</td><td>-10 °C / +40 °C</td><td>No. 0200-NAWI-18720</td><td>Classe-III</td></tr>
+                        <tr><td>WB</td><td>6/15 kg</td><td>--</td><td>2/5 g</td><td>--</td><td>40 g</td><td>--</td><td>-Max</td><td>-10 °C / +40 °C</td><td>No. 0200-NAWI-03170</td><td>Classe-III</td></tr>
+                        <tr><td>WB</td><td>15/30 kg</td><td>--</td><td>5/10 g</td><td>--</td><td>100 g</td><td>--</td><td>-Max</td><td>-10 °C / +40 °C</td><td>No. 0200-NAWI-03170</td><td>Classe-III</td></tr>
+                        <tr><td>WB</td><td>15 Kg</td><td>--</td><td>5 g</td><td>--</td><td>100 g</td><td>--</td><td>-Max</td><td>-10 °C / +40 °C</td><td>No. 0200-NAWI-03170</td><td>Classe-III</td></tr>
+                        <tr><td>WB</td><td>30 Kg</td><td>--</td><td>10 g</td><td>--</td><td>200 g</td><td>--</td><td>-Max</td><td>-10 °C / +40 °C</td><td>No. 0200-NAWI-03170</td><td>Classe-III</td></tr>
+                        <tr><td>WB</td><td>30/60 Kg</td><td>--</td><td>10/20 g</td><td>--</td><td>200 g</td><td>--</td><td>-Max</td><td>-10 °C / +40 °C</td><td>No. 0200-NAWI-03170</td><td>Classe-III</td></tr>
+                        <tr><td>WB</td><td>60 Kg</td><td>--</td><td>20 g</td><td>--</td><td>400 g</td><td>--</td><td>-Max</td><td>-10 °C / +40 °C</td><td>No. 0200-NAWI-03170</td><td>Classe-III</td></tr>
+                        <tr><td>WB</td><td>150 kg</td><td>--</td><td>50 g</td><td>--</td><td>1000 g</td><td>--</td><td>-Max</td><td>-10 °C / +40 °C</td><td>No. 0200-NAWI-03170</td><td>Classe-III</td></tr>
+                        <tr><td>WB</td><td>250 kg</td><td>--</td><td>50/100 g</td><td>--</td><td>1000 g</td><td>--</td><td>-Max</td><td>-10 °C / +40 °C</td><td>No. 0200-NAWI-03170</td><td>Classe-III</td></tr>
+                        <tr><td>WB</td><td>300 kg</td><td>--</td><td>100 g</td><td>--</td><td>2000 g</td><td>--</td><td>-Max</td><td>-10 °C / +40 °C</td><td>No. 0200-NAWI-03170</td><td>Classe-III</td></tr>
+                        <tr><td>WB</td><td>600 kg</td><td>--</td><td>200 g</td><td>--</td><td>4000 g</td><td>--</td><td>-Max</td><td>-10 °C / +40 °C</td><td>No. 0200-NAWI-03170</td><td>Classe-III</td></tr>
+                        <tr><td>WB</td><td>600 kg</td><td>--</td><td>500 g</td><td>--</td><td>10 kg</td><td>--</td><td>-Max</td><td>-10 °C / +40 °C</td><td>No. 0200-NAWI-03170</td><td>Classe-III</td></tr>
+                        <tr><td>WB</td><td>1500 kg</td><td>--</td><td>500 g</td><td>--</td><td>10 kg</td><td>--</td><td>-Max</td><td>-10 °C / +40 °C</td><td>No. 0200-NAWI-03170</td><td>Classe-III</td></tr>
+                        <tr><td>WB</td><td>2000 kg</td><td>--</td><td>1000 g</td><td>--</td><td>20 kg</td><td>--</td><td>-Max</td><td>-10 °C / +40 °C</td><td>No. 0200-NAWI-03170</td><td>Classe-III</td></tr>
+                        <tr><td>WB</td><td>3000 kg</td><td>--</td><td>1 kg</td><td>--</td><td>20 kg</td><td>--</td><td>-Max</td><td>-10 °C / +40 °C</td><td>No. 0200-NAWI-03170</td><td>Classe-III</td></tr>
+                        <tr><td>WB</td><td>6000 kg</td><td>--</td><td>2 kg</td><td>--</td><td>40 kg</td><td>--</td><td>-Max</td><td>-10 °C / +40 °C</td><td>No. 0200-NAWI-03170</td><td>Classe-III</td></tr>
+                        <tr><td>WB S</td><td>15 Kg</td><td>--</td><td>5 g</td><td>--</td><td>100 g</td><td>--</td><td>-Max</td><td>-10 °C / +40 °C</td><td>No. 0200-NAWI-03170</td><td>Classe-III</td></tr>
+                        <tr><td>WB S</td><td>30 kg</td><td>--</td><td>10 g</td><td>--</td><td>200 g</td><td>--</td><td>-Max</td><td>-10 °C / +40 °C</td><td>No. 0200-NAWI-03170</td><td>Classe-III</td></tr>
+                        <tr><td>WB S</td><td>150 kg</td><td>--</td><td>50 g</td><td>--</td><td>1000 g</td><td>--</td><td>-Max</td><td>-10 °C / +40 °C</td><td>No. 0200-NAWI-03170</td><td>Classe-III</td></tr>
+                        <tr><td>WB S</td><td>300 kg</td><td>--</td><td>100 g</td><td>--</td><td>2000 g</td><td>--</td><td>-Max</td><td>-10 °C / +40 °C</td><td>No. 0200-NAWI-03170</td><td>Classe-III</td></tr>
+                        <tr><td>WB S</td><td>400 kg</td><td>--</td><td>1000 g</td><td>--</td><td>20 Kg</td><td>--</td><td>-Max</td><td>-10 °C / +40 °C</td><td>No. 0200-NAWI-03170</td><td>Classe-III</td></tr>
+                        <tr><td>WB S</td><td>600 kg</td><td>--</td><td>200 g</td><td>--</td><td>4000 g</td><td>--</td><td>-Max</td><td>-10 °C / +40 °C</td><td>No. 0200-NAWI-03170</td><td>Classe-III</td></tr>
+                        <tr><td>WB S</td><td>1500 kg</td><td>--</td><td>500 g</td><td>--</td><td>10000 g</td><td>--</td><td>-Max</td><td>-10 °C / +40 °C</td><td>No. 0200-NAWI-03170</td><td>Classe-III</td></tr>
+                        <tr><td>WB S</td><td>2000 kg</td><td>--</td><td>1000 g</td><td>--</td><td>20000 g</td><td>--</td><td>-Max</td><td>-10 °C / +40 °C</td><td>No. 0200-NAWI-03170</td><td>Classe-III</td></tr>
+                        <tr><td>WB S</td><td>3000 kg</td><td>--</td><td>1000 g</td><td>--</td><td>20 kg</td><td>--</td><td>-Max</td><td>-10 °C / +40 °C</td><td>No. 0200-NAWI-03170</td><td>Classe-III</td></tr>
+                        <tr><td>WB S</td><td>6000 kg</td><td>--</td><td>2000 g</td><td>--</td><td>40 kg</td><td>--</td><td>-Max</td><td>-10 °C / +40 °C</td><td>No. 0200-NAWI-03170</td><td>Classe-III</td></tr>
+                        <tr><td>WJ</td><td>300 g</td><td>--</td><td>0,05 g  d = 0,005 g</td><td>--</td><td>1 g</td><td>--</td><td>-99,95 g</td><td>+5 °C / +40 °C</td><td>DK 0199.586</td><td>Classe-II</td></tr>
+                        <tr><td>WJ</td><td>600 g</td><td>--</td><td>0,1 g  d = 0,01 g</td><td>--</td><td>0,5 g</td><td>--</td><td>-Max</td><td>+5 °C / +40 °C</td><td>DK 0199.586</td><td>Classe-II</td></tr>
+                        <tr><td>WJ</td><td>1500 g</td><td>--</td><td>0,2 g  d = 0,02 g</td><td>--</td><td>10 g</td><td>--</td><td>-999,8 g</td><td>+5 °C / +40 °C</td><td>DK 0199.586</td><td>Classe-II</td></tr>
+                        <tr><td>WJ</td><td>3000 g</td><td>--</td><td>0,5 g  d = 0,05 g</td>

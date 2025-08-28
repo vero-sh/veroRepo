@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <img src=Logo-WUNDER-2019-R-3-300x133.png alt="Wunder" class="logo-img" width="170" height="90">
+  <title>Elenco C.E.</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <style>
+    :root {
+      --primary: #ff9763;  /* nuovo colore header */
+      --add:    #1b8828;
+      --edit:   #586df4;
+      --delete: #e91e63;
+      --header-bg: #eeeeee;
+      --border: #e0e0e0;
+    }
+
+    * { box-sizing:border-box; margin:0; padding:0; font-family:'Roboto',sans-serif; }
+    body { background:#f5f5f5; padding:20px; }
+
+    h1{ text-align:center; color:#333;margin-bottom:10px; }
+
+    .btn{ padding:6px 12px; border:none; border-radius:4px; cursor:pointer; color:#fff; font-size:.9rem; }
+    .btn-add{background:var(--add)}
+    .btn-edit{background:var(--edit)}
+    .btn-delete{background:var(--delete)}
+
+    .table-wrap{background:#fff;border-radius:8px;box-shadow:0 2px 10px rgba(0,0,0,.1);padding:20px;overflow-x:auto;margin-top:20px}
+
+    table{width:100%;border-collapse:collapse}
+    th,td{padding:12px 14px;border-bottom:1px solid var(--border);text-align:left}
+    th{background:var(--primary);color:#fff;position:sticky;top:0}
+    tr:hover{background:#fafafa}
+    .actions{white-space:nowrap}
+
+    /* form */
+    .form-box{display:none;background:#fff;padding:20px;border-radius:8px;box-shadow:0 2px 10px rgba(0,0,0,.1);margin-top:20px}
+    .form-row{margin-bottom:14px}
+    label{display:block;font-weight:500;margin-bottom:4px}
+    input,select,textarea{width:100%;padding:8px;border:1px solid var(--border);border-radius:4px}
+    textarea{resize:vertical}
+    .form-actions{text-align:right;margin-top:16px}
+  </style>
+</head>
+<body>
+  <h1>Elenco C.E.</h1>
+  <button id="addBtn" class="btn btn-add">+ Nuova Registrazione</button>
+
+  <div id="formBox" class="form-box">
+    <form id="recordForm">
+      <input type="hidden" id="editIndex">
+      <div class="form-row">
+        <label for="data">Data</label>
+        <input type="date" id="data" required>
+      </div>
+      <div class="form-row">
+        <label for="portata">Portata</label>
+        <input type="number" id="portata" min="0" required>
+      </div>
+      <div class="form-row">
+        <label for="divisione">Divisione</label>
+        <input type="text" id="divisione" required>
+      </div>
+      <div class="form-row">
+        <label for="operatore">Operatore</label>
+        <input type="text" id="operatore" required>
+      </div>
+      <div class="form-row">
+        <label for="cliente">Cliente</label>
+        <input type="text" id="cliente" required>
+      </div>
+      <div class="form-row">
+        <label for="zona">Zona / Gravità</label>
+        <input type="text" id="zona" required>
+      </div>
+      <div class="form-row">
+        <label for="nota1">Nota 1</label>
+        <textarea id="nota1" rows="2"></textarea>
+      </div>
+      <div class="form-row">
+        <label for="nota2">Nota 2</label>
+        <textarea id="nota2" rows="2"></textarea>
+      </div>
+
+      <div class="form-actions">
+        <button type="button" id="cancelBtn" class="btn">Annulla</button>
+        <button type="submit" class="btn btn-add">Salva</button>
+      </div>
+    </form>
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Data</th>
+          <th>Portata</th>
+          <th>Divisione</th>
+          <th>Operatore</th>
+          <th>Cliente</th>
+          <th>Zona / Gravità</th>
+          <th>Nota 1</th>
+          <th>Nota 2</th>
+          <th class="actions">Azioni</th>
+        </tr>
+      </thead>
+      <tbody id="tbody"></tbody>
+    </table>
+  </div>
+
+  <script>
+    const addBtn  = document.getElementById('addBtn');
+    const formBox = document.getElementById('formBox');
+    const cancelBtn = document.getElementById('cancelBtn');
+    const recordForm = document.getElementById('recordForm');
+    const tbody = document.getElementById('tbody');
+
+    let records = JSON.parse(localStorage.getItem('records')) || [];
+
+    function toggleForm(show){formBox.style.display = show ? 'block':'none'}
+
+    function render(){
+      tbody.innerHTML='';
+      records.forEach((r,i)=>{
+        const tr=document.createElement('tr');
+        tr.innerHTML=`<td>${r.data}</td>
+                      <td>${r.portata}</td>
+                      <td>${r.divisione}</td>
+                      <td>${r.operatore}</td>
+                      <td>${r.cliente}</td>
+                      <td>${r.zona}</td>
+                      <td>${r.nota1||''}</td>
+                      <td>${r.nota2||''}</td>
+                      <td class="actions">
+                        <button class="btn btn-edit" onclick="editRec(${i})"><i class="fas fa-edit"></i></button>
+                        <button class="btn btn-delete" onclick="delRec(${i})"><i class="fas fa-trash"></i></button>
+                      </td>`;
+        tbody.appendChild(tr);
+      });
+    }
+
+    function saveLS(){localStorage.setItem('records',JSON.stringify(records));}
+
+    addBtn.onclick = ()=>{
+      recordForm.reset();
+      document.getElementById('editIndex').value='';
+      toggleForm(true);
+    };
+
+    cancelBtn.onclick=()=>toggleForm(false);
+
+    recordForm.onsubmit=e=>{
+      e.preventDefault();
+      const rec={
+        data:   document.getElementById('data').value,
+        portata:+document.getElementById('portata').value,
+        divisione:document.getElementById('divisione').value,
+        operatore:document.getElementById('operatore').value,
+        cliente: document.getElementById('cliente').value,
+        zona:    document.getElementById('zona').value,
+        nota1:   document.getElementById('nota1').value,
+        nota2:   document.getElementById('nota2').value
+      };
+      const idx=document.getElementById('editIndex').value;
+      if(idx==='') records.push(rec); else records[idx]=rec;
+      saveLS();
+      render();
+      toggleForm(false);
+    };
+
+    window.editRec = idx => {
+      const r=records[idx];
+      document.getElementById('editIndex').value=idx;
+      document.getElementById('data').value=r.data;
+      document.getElementById('portata').value=r.portata;
+      document.getElementById('divisione').value=r.divisione;
+      document.getElementById('operatore').value=r.operatore;
+      document.getElementById('cliente').value=r.cliente;
+      document.getElementById('zona').value=r.zona;
+      document.getElementById('nota1').value=r.nota1;
+      document.getElementById('nota2').value=r.nota2;
+      toggleForm(true);
+    };
+
+    window.delRec = idx => {
+      if(confirm('Eliminare la registrazione?')){
+        records.splice(idx,1);
+        saveLS();
+        render();
+      }
+    };
+
+    // init
+    render();
+  </script>
+</body>
+</html>

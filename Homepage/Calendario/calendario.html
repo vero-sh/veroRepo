@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <img src=Logo-WUNDER-2019-R-3-300x133.png alt="Wunder" class="logo-img" width="170" height="90">
+    <title>Calendario Ferie e Permessi</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #4285f4;
+            --ferie: #f44336;
+            --permessi: #ff9800;
+            --malattia: #4caf50;
+            --today: #e8f0fe;
+            --header-bg: #f5f5f5;
+            --border: #e0e0e0;
+            --delete: #d32f2f;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        body {
+            background-color: #fafafa;
+            padding: 20px;
+        }
+
+        .calendar-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .calendar-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            background-color: var(--primary);
+            color: white;
+        }
+
+        .month-year {
+            font-size: 1.3rem;
+            font-weight: 500;
+        }
+
+        .nav-buttons button {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.2rem;
+            cursor: pointer;
+            padding: 5px 10px;
+            border-radius: 4px;
+            transition: background 0.2s;
+        }
+
+        .nav-buttons button:hover {
+            background: rgba(255,255,255,0.2);
+        }
+
+        .weekdays {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            background-color: var(--header-bg);
+            font-weight: 500;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        .days {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 1px;
+            background-color: var(--border);
+        }
+
+        .day {
+            min-height: 100px;
+            padding: 8px;
+            background-color: white;
+            position: relative;
+            transition: all 0.2s;
+            cursor: pointer;
+        }
+
+        .day:hover {
+            background-color: #f5f5f5;
+        }
+
+        .day-number {
+            font-weight: 500;
+            margin-bottom: 5px;
+        }
+
+        .today .day-number {
+            background-color: var(--primary);
+            color: white;
+            display: inline-block;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 24px;
+        }
+
+        .event {
+            font-size: 0.75rem;
+            padding: 2px 5px;
+            border-radius: 4px;
+            margin-bottom: 3px;
+            color: white;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .event-actions {
+            display: none;
+        }
+
+        .event:hover .event-actions {
+            display: flex;
+            gap: 3px;
+        }
+
+        .event-btn {
+            background: none;
+            border: none;
+            color: white;
+            cursor: pointer;
+            font-size: 0.6rem;
+            padding: 1px;
+        }
+
+        .ferie {
+            background-color: var(--ferie);
+        }
+
+        .permesso {
+            background-color: var(--permessi);
+        }
+
+        .malattia {
+            background-color: var(--malattia);
+        }
+
+        .legend {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+            padding: 10px;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 0.9rem;
+        }
+
+        .legend-color {
+            width: 15px;
+            height: 15px;
+            border-radius: 3px;
+        }
+
+        .add-event {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .add-event button {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: background 0.2s;
+        }
+
+        .add-event button:hover {
+            background-color: #3367d6;
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+            z-index: 100;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            width: 90%;
+            max-width: 400px;
+            position: relative;
+        }
+
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid var(--border);
+            border-radius: 4px;
+        }
+
+        .form-actions {
+            text-align: right;
+            margin-top: 20px;
+        }
+
+        .form-actions button {
+            padding: 8px 16px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .save-btn {
+            background-color: var(--primary);
+            color: white;
+            margin-left: 10px;
+        }
+
+        .delete-btn {
+            background-color: var(--delete);
+            color: white;
+        }
+
+        @media (max-width: 600px) {
+            .day {
+                min-height: 70px;
+                font-size: 0.8rem;
+            }
+            
+            .event {
+                font-size: 0.65rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="calendar-container">
+        <div class="calendar-header">
+            <div class="nav-buttons">
+                <button id="prev-month"><i class="fas fa-chevron-left"></i></button>
+            </div>
+            <div class="month-year" id="month-year">Luglio 2023</div>
+            <div class="nav-buttons">
+                <button id="next-month"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+
+        <div class="weekdays">
+            <div>Lun</div>
+            <div>Mar</div>
+            <div>Mer</div>
+            <div>Gio</div>
+            <div>Ven</div>
+            <div>Sab</div>
+            <div>Dom</div>
+        </div>
+
+        <div class="days" id="calendar-days">
+            <!-- I giorni verranno inseriti qui via JavaScript -->
+        </div>
+    </div>
+
+    <div class="legend">
+        <div class="legend-item">
+            <div class="legend-color ferie"></div>
+            <span>Ferie</span>
+        </div>
+        <div class="legend-item">
+            <div class="legend-color permesso"></div>
+            <span>Permesso</span>
+        </div>
+        <div class="legend-item">
+            <div class="legend-color malattia"></div>
+            <span>Malattia</span>
+        </div>
+    </div>
+
+    <div class="add-event">
+        <button id="add-event-btn"><i class="fas fa-plus"></i> Aggiungi Evento</button>
+    </div>
+
+    <!-- Modal per gestione eventi -->
+    <div class="modal" id="event-modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3 id="modal-title">Aggiungi Evento</h3>
+            <form id="event-form">
+                <input type="hidden" id="event-id">
+                <div class="form-group">
+                    <label for="event-date">Data</label>
+                    <input type="date" id="event-date" required>
+                </div>
+                <div class="form-group">
+                    <label for="event-type">Tipo</label>
+                    <select id="event-type" required>
+                        <option value="ferie">Ferie</option>
+                        <option value="permesso">Permesso</option>
+                        <option value="malattia">Malattia</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="event-note">Note (opzionale)</label>
+                    <input type="text" id="event-note">
+                </div>
+                <div class="form-actions">
+                    <button type="button" id="delete-btn" class="delete-btn" style="display: none;">
+                        <i class="fas fa-trash"></i> Elimina
+                    </button>
+                    <button type="button" class="cancel-btn">Annulla</button>
+                    <button type="submit" class="save-btn">Salva</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Variabili globali
+            let currentDate = new Date();
+            let currentMonth = currentDate.getMonth();
+            let currentYear = currentDate.getFullYear();
+            let events = JSON.parse(localStorage.getItem('calendarEvents')) || [];
+            let selectedDate = null;
+            let selectedEventId = null;
+
+            // Elementi DOM
+            const monthYearElement = document.getElementById('month-year');
+            const calendarDays = document.getElementById('calendar-days');
+            const prevMonthBtn = document.getElementById('prev-month');
+            const nextMonthBtn = document.getElementById('next-month');
+            const addEventBtn = document.getElementById('add-event-btn');
+            const modal = document.getElementById('event-modal');
+            const closeBtn = document.querySelector('.close');
+            const cancelBtn = document.querySelector('.cancel-btn');
+            const deleteBtn = document.getElementById('delete-btn');
+            const eventForm = document.getElementById('event-form');
+            const modalTitle = document.getElementById('modal-title');
+            const eventIdInput = document.getElementById('event-id');
+
+            // Genera un ID univoco
+            function generateId() {
+                return Date.now().toString(36) + Math.random().toString(36).substr(2);
+            }
+
+            // Funzioni
+            function renderCalendar() {
+            
+                // Pulisci il calendario
+                calendarDays.innerHTML = '';
+
+                // Imposta il titolo del mese/anno
+                const monthNames = ['Gennaio', 'Febbraio', 'Marzo', 'Aprile', 'Maggio', 'Giugno', 
+                                   'Luglio', 'Agosto', 'Settembre', 'Ottobre', 'Novembre', 'Dicembre'];
+                monthYearElement.textContent = `${monthNames[currentMonth]} ${currentYear}`;
+
+                // Ottieni il primo giorno del mese
+                const firstDay = new Date(currentYear, currentMonth, 1);
+                const startingDay = firstDay.getDay() === 0 ? 6 : firstDay.getDay() - 1; // Lun=0, Dom=6
+
+                // Ottieni l'ultimo giorno del mese
+                const lastDay = new Date(currentYear, currentMonth + 1, 0).getDate();
+
+                // Ottieni il giorno di oggi
+                const today = new Date();
+                const isCurrentMonth = currentMonth === today.getMonth() && currentYear === today.getFullYear();
+
+                // Aggiungi i giorni vuoti all'inizio
+                for (let i = 0; i < startingDay; i++) {
+                    const emptyDay = document.createElement('div');
+                    emptyDay.classList.add('day');
+                    calendarDays.appendChild(emptyDay);
+                }
+
+                // Aggiungi i giorni del mese
+                for (let day = 1; day <= lastDay; day++) {
+                    const dayElement = document.createElement('div');
+                    dayElement.classList.add('day');
+
+                    const dayNumber = document.createElement('div');
+                    dayNumber.classList.add('day-number');
+                    dayNumber.textContent = day;
+
+                    // Evidenzia il giorno corrente
+                    if (isCurrentMonth && day === today.getDate()) {
+                        dayElement.classList.add('today');
+                    }
+
+                    dayElement.appendChild(dayNumber);
+
+                    // Aggiungi eventi per questo giorno
+                    const dateStr = `${currentYear}-${String(currentMonth + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
+                    const dayEvents = events.filter(event => event.date === dateStr);
+
+                    dayEvents.forEach(event => {
+                        const eventElement = document.createElement('div');
+                        eventElement.classList.add('event', event.type);
+                        eventElement.innerHTML = `
+                            <span>${event.note || event.type.charAt(0).toUpperCase() + event.type.slice(1)}</span>
+                            <div class="event-actions">
+                                <button class="event-btn edit-btn" data-id="${event.id}">
+                                    <i class="fas fa-edit"></i>
+                                </button>
+                                <button class="event-btn delete-event-btn" data-id="${event.id}">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </div>
+                        `;
+                        dayElement.appendChild(eventElement);
+                    });
+
+                    // Aggiungi gestore di eventi al giorno
+                    dayElement.addEventListener('click', function(e) {
+                        if (e.target === this || e.target.classList.contains('day-number')) {
+                            selectedDate = dateStr;
+                            selectedEventId = null;
+                            modalTitle.textContent = 'Aggiungi Evento';
+                            document.getElementById('event-date').value = selectedDate;
+                            document.getElementById('event-type').value = 'ferie';
+                            document.getElementById('event-note').value = '';
+                            deleteBtn.style.display = 'none';
+                            toggleModal(true);
+                        }
+                    });
+
+                    calendarDays.appendChild(dayElement);
+                }
+
+                // Aggiungi gestori di eventi per i pulsanti nelle event card
+                document.querySelectorAll('.edit-btn').forEach(btn => {
+                    btn.addEventListener('click', function(e) {
+                        e.stopPropagation();
+                        const eventId = this.getAttribute('data-id');
+                        editEvent(eventId);
+                    });
+                });
+
+                document.querySelectorAll('.delete-event-btn').forEach(btn => {
+                    btn.addEventListener('click', function(e) {
+                        e.stopPropagation();
+                        const eventId = this.getAttribute('data-id');
+                        deleteEvent(eventId);
+                    });
+                });
+            }
+
+            // Modifica evento
+            function editEvent(eventId) {
+                const event = events.find(e => e.id === eventId);
+                if (event) {
+                    selectedEventId = eventId;
+                    modalTitle.textContent = 'Modifica Evento';
+                    document.getElementById('event-date').value = event.date;
+                    document.getElementById('event-type').value = event.type;
+                    document.getElementById('event-note').value = event.note || '';
+                    eventIdInput.value = eventId;
+                    deleteBtn.style.display = 'inline-block';
+                    toggleModal(true);
+                }
+            }
+
+            
+            // Elimina evento
+            function deleteEvent(eventId) {
+                if (confirm('Sei sicuro di voler eliminare questo evento?')) {
+                    events = events.filter(e => e.id !== eventId);
+                    localStorage.setItem('calendarEvents', JSON.stringify(events));
+                    renderCalendar();
+                }
+            }
+
+            // Mostra/nascondi modal
+            function toggleModal(show) {
+                modal.style.display = show ? 'flex' : 'none';
+                if (!show) {
+                    selectedEventId = null;
+                    eventIdInput.value = '';
+                }
+            }
+
+            // Event listeners
+            prevMonthBtn.addEventListener('click', () => {
+                currentMonth--;
+                if (currentMonth < 0) {
+                    currentMonth = 11;
+                    currentYear--;
+                }
+                renderCalendar();
+            });
+
+            nextMonthBtn.addEventListener('click', () => {
+                currentMonth++;
+                if (currentMonth > 11) {
+                    currentMonth = 0;
+                    currentYear++;
+                }
+                renderCalendar();
+            });
+
+            addEventBtn.addEventListener('click', () => {
+                selectedDate = null;
+                selectedEventId = null;
+                modalTitle.textContent = 'Aggiungi Evento';
+                document.getElementById('event-date').value = '';
+                document.getElementById('event-type').value = 'ferie';
+                document.getElementById('event-note').value = '';
+                deleteBtn.style.display = 'none';
+                toggleModal(true);
+            });
+
+            closeBtn.addEventListener('click', () => toggleModal(false));
+            cancelBtn.addEventListener('click', () => toggleModal(false));
+
+            deleteBtn.addEventListener('click', function() {
+                if (selectedEventId) {
+                    deleteEvent(selectedEventId);
+                    toggleModal(false);
+                }
+            });
+
+            eventForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const date = document.getElementById('event-date').value;
+                const type = document.getElementById('event-type').value;
+                const note = document.getElementById('event-note').value;
+
+                if (selectedEventId) {
+                    // Modifica evento esistente
+                    const index = events.findIndex(e => e.id === selectedEventId);
+                    if (index !== -1) {
+                        events[index] = { ...events[index], date, type, note };
+                    }
+                } else {
+                    // Aggiungi nuovo evento
+                    events.push({ 
+                        id: generateId(),
+                        date, 
+                        type, 
+                        note 
+                    });
+                }
+
+                localStorage.setItem('calendarEvents', JSON.stringify(events));
+                toggleModal(false);
+                renderCalendar();
+            });
+
+            // Inizializza il calendario
+            renderCalendar();
+        });
+    </script>
+    <footer>
+        <p>Wunder - © 2025</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,17 @@
+ETICHETTA LP50 - APC-B
+
+ON + NUMBER-SET
+
+APC= F7 SER1 - F8 UTP
+
+Salvare con nome: FORM01, FORM1, FORM0 e FORM00
+
+Cavo di collegamento: IN PARALLELO, PIN TO PIN
+
+2 --- 2
+3 --- 3
+5 --- 5
+
+18/07/2017
+
+Riccardo
