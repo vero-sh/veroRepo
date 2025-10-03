@@ -79,3 +79,22 @@ function somma(a, b) {
 }
 console.log("somma:" + typeof(somma));
 console.log("somma(5, 10): " + somma(5, 10));
+
+//truthy e falsy
+//valori che in un contesto booleano sono considerati true o false
+//falsy: false, 0, -0, 0n, "", null, undefined, NaN
+//truthy: tutti gli altri valori
+
+
+//condizioni
+let cond = true;
+if (cond) {
+    console.log("condizione vera");
+} else {
+    console.log("condizione falsa");
+}
+
+//operatoirri di confronto
+//== (uguale) === (strettamente uguale) != (diverso) !== (strettamente diverso) > < >= <=
+//=== e !== confrontano anche il tipo di dato
+
