@@ -14,6 +14,9 @@
 
 - il file va salvato con estensione .php se per esempio metto estensione .html non viene interpretato dal web server come php ma come html
 
+- il metodo Get invia i dati tramite l'url, il metodo Post invia i dati in modo nascosto
+- il metodo Post e' piu sicuro del metodo Get perche i dati non sono visibili nell'url
+
 - il codice php va inserito tra i tag <?php e ?> e viene interpretato dal motore php
 - se mischio codice html e php va messa l'estensione .php altrimenti il codice php non viene interpretato
 
@@ -88,6 +91,15 @@ CICLO WHILE:
 while ($condizione) {
     // codice da eseguire finché la condizione è vera
 }
+
+userem winSCP che utilizza il protocollo SFTP per caricare i file sul server dal client 
+per collegarsi occorre il nome del server(tave.osdb.it), username e password. la porta di default e' la 22 ma puo essere cambiata.
+si utilizza la cartella web per caricare i file che saranno visibili dal web server
+
+error 404 not found: il file non esiste o non e' raggiungibile dal web server
+
+error 500 internal server error: errore nel codice php, per vedere l'errore occorre abilitare la visualizzazione degli errori nel file php.ini
+
 */
 
 ?>
