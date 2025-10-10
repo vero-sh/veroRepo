@@ -67,6 +67,7 @@ tutti uguali a java ma si aggiungono i seguenti:
 - OPERATORI LOGICI:
 && AND
 || OR
+
 ! NOT
 
 
