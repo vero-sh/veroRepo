@@ -6,7 +6,7 @@
     <title>Login Result</title>
     <style>
         body {
-            background: linear-gradient(135deg, #74ebd5 0%, #ACB6E5 100%);
+            background: linear-gradient(135deg, #ecc266ff 0%, #eb770bff 100%);
             font-family: 'Segoe UI', Arial, sans-serif;
             display: flex;
             justify-content: center;
@@ -40,23 +40,20 @@
     <div class="container">
     <?php
         $_USER = array(
-            array("username" => "Niccolò", "password" => "Veronesi"),
-            array("username" => "admin", "password" => "123"),
-            array("username" => "Luca", "password" => "Mazzoni"),
+            "Niccolò" => "Veronesi",
+            "admin" => "123",
+            "Luca" => "Mazzoni",
+            "Malaman" => "Malaman123"
         );
 
-        $login_failed = true;
-        foreach($_USER as $value) {
-            if ($_GET["username"] === $value["username"] && $_GET["password"] === $value["password"]) {
-                echo '<p class="success">Login effettuato con successo</p>';
-                echo '<p class="welcome">Benvenuto ' . htmlspecialchars($value["username"]) . '</p>';
-                $login_failed = false;
-                break;
-            }
+        if($_USER[$_GET["username"]] === $_GET["password"]) {
+                echo '<img src="IMG_6875.jpeg" alt="Foto stadio" style="width:120px; border-radius:10px; margin-bottom:0.5rem;">';
+                echo '<div class="success">Login Effettuato!</div>';
+            echo '<div class="welcome">Benvenuto, ' . htmlspecialchars($_GET["username"]) . '!</div>';
+        } else {
+            echo '<div class="fail">Login Fallito. Nome utente o password non validi.</div>';
         }
-        if($login_failed) {
-            echo '<p class="fail">Login fallito</p>';
-        }
+        
     ?>
     </div>
 </body>
