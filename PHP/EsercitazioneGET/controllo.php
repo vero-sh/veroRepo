@@ -47,7 +47,7 @@
         );
 
         if(isset($_USER[$_GET["username"]]) && $_USER[$_GET["username"]] === $_GET["password"]) {
-                echo '<img src="IMG_6875.jpeg" alt="Foto stadio" style="width:120px; border-radius:10px; margin-bottom:0.5rem;">';
+                
                 echo '<div class="success">Login Effettuato!</div>';
             echo '<div class="welcome">Benvenuto, ' . htmlspecialchars($_GET["username"]) . '!</div>';
         } else {
