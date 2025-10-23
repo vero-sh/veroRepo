@@ -45,16 +45,28 @@
             "Luca" => "Mazzoni",
             "Malaman" => "Malaman123"
         );
-
+        $controllo = true;
         if(isset($_USER[$_GET["username"]]) && $_USER[$_GET["username"]] === $_GET["password"]) {
-                
+                echo '<img src="IMG_6875.jpeg" alt="Foto stadio" style="width:120px; border-radius:10px; margin-bottom:0.5rem;">';
                 echo '<div class="success">Login Effettuato!</div>';
             echo '<div class="welcome">Benvenuto, ' . htmlspecialchars($_GET["username"]) . '!</div>';
+            $controllo = false;
+            break;
+
         } else {
             echo '<div class="fail">Login Fallito. Nome utente o password non validi.</div>';
         }
-        
-    ?>
+?>
+        </div>
+        <?php
+        if($controllo) {
+                echo '<div class="fail">Login Fallito. Nome utente o password non validi.</div>';
+                echo '<h4r>I tuoi dati: </h4>';
+                
+            }
+
+        ?>
+
     </div>
 </body>
 </html>
