@@ -3,70 +3,7 @@
     "nome": "Niccolò",
     "cognome": "Veronesi",
     "email": "niccolo.veronesi@example.com",
-    "username": "niccovero",
+    "login": "niccovero",
     "password": "1234"
-  },
-  {
-    "nome": "Giulia",
-    "cognome": "Bianchi",
-    "email": "giulia.bianchi@example.com",
-    "username": "giubia",
-    "password": "Giulia123!"
-  },
-  {
-    "nome": "Marco",
-    "cognome": "Verdi",
-    "email": "marco.verdi@example.com",
-    "username": "marcover",
-    "password": "MarV2023$"
-  },
-  {
-    "nome": "Sara",
-    "cognome": "Neri",
-    "email": "sara.neri@example.com",
-    "username": "sarineri",
-    "password": "S@ra2024"
-  },
-  {
-    "nome": "Davide",
-    "cognome": "Conti",
-    "email": "davide.conti@example.com",
-    "username": "d.conti",
-    "password": "DavC!567"
-  },
-  {
-    "nome": "Elena",
-    "cognome": "Gallo",
-    "email": "elena.gallo@example.com",
-    "username": "elenagal",
-    "password": "Elen@G22"
-  },
-  {
-    "nome": "Francesco",
-    "cognome": "Ricci",
-    "email": "francesco.ricci@example.com",
-    "username": "franricci",
-    "password": "FrRicci!89"
-  },
-  {
-    "nome": "Chiara",
-    "cognome": "Fontana",
-    "email": "chiara.fontana@example.com",
-    "username": "chifon",
-    "password": "Chiara#2025"
-  },
-  {
-    "nome": "Alessandro",
-    "cognome": "Grassi",
-    "email": "alessandro.grassi@example.com",
-    "username": "alegrassi",
-    "password": "Aless123!"
-  },
-  {
-    "nome": "Martina",
-    "cognome": "Costa",
-    "email": "martina.costa@example.com",
-    "username": "marticosta",
-    "password": "MartiCo#1"
   }
 ]

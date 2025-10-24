@@ -39,34 +39,47 @@
 <body>
     <div class="container">
     <?php
-        $_USER = array(
-            "Niccolò" => "Veronesi",
-            "admin" => "123",
-            "Luca" => "Mazzoni",
-            "Malaman" => "Malaman123"
-        );
-        $controllo = true;
-        if(isset($_USER[$_GET["username"]]) && $_USER[$_GET["username"]] === $_GET["password"]) {
-                echo '<img src="IMG_6875.jpeg" alt="Foto stadio" style="width:120px; border-radius:10px; margin-bottom:0.5rem;">';
-                echo '<div class="success">Login Effettuato!</div>';
-            echo '<div class="welcome">Benvenuto, ' . htmlspecialchars($_GET["username"]) . '!</div>';
-            $controllo = false;
-            break;
+        
+        $nomeFile = "utente.json";
 
-        } else {
-            echo '<div class="fail">Login Fallito. Nome utente o password non validi.</div>';
+           if (!file_exists($nomeFile)) {
+            die ("File non esistente");
+        } else { $contenuto = file_get_contents($nomeFile);
+            //var_dump --> stampa il tipo di variabile e il suo contenuto
+            //var_dump($contenuto);
+            $dati = json_decode($contenuto, true); //con true converto in array associativo
         }
+
+        $controllo = true;
+        foreach ($dati as $utente) {
+                if ($utente['login'] === $_GET['username'] && $utente['password'] === $_GET['password']) {
+                    echo "<h1>Benvenuto " . $utente['nome'] . "</h1>";
+                    echo "<h3>Accesso effettuato con successo</h3>";
+                    $controllo = false;
+                    break;
+                }
+            }
+            if ($controllo) {
+                echo "<h1>Accesso negato</h1>";
+                echo "<h3>Username o password errati</h3>";
+            }
 ?>
         </div>
-        <?php
-        if($controllo) {
-                echo '<div class="fail">Login Fallito. Nome utente o password non validi.</div>';
-                echo '<h4r>I tuoi dati: </h4>';
-                
-            }
-
-        ?>
+     
 
     </div>
+    <?php
+        if (!$controllo) {
+            echo("<div class=container>");
+            echo("<h1> Dati </h1>");
+            echo("<h4>" . (isset($utente) ? $utente['nome'] : '') . " i tuoi dati sono i seguenti: </h4>");
+            echo "<p>";
+            foreach ($utente as $k => $v) {
+                echo "$k: $v<br>";
+            }
+            echo "</p>";
+            echo("</div>");
+        }
+    ?>
 </body>
 </html>
