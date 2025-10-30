@@ -3,7 +3,7 @@
 👨‍💻 Computer science student with a passion for IT, cybersecurity, and scripting.
 
 🔧 Skills:
-- 🖥️ Java, PowerShell, Bash, HTML/CSS  
+- 🖥️ Java, PowerShell, Bash, HTML/CSS, JavaScript, Php, Python   
 - 🐧 Linux, Windows internals  
 - 🔒 Debloat scripts, monitoring, automation  
 
