@@ -1,12 +1,12 @@
 <?php
-function divisione($num1, $num2) {
-    if ($num2 == 0) {
+function divisione($a, $b) {
+    if ($b == 0) {
         return "Errore: divisione per zero!";
     } else {
-        return $num1 / $num2;
+        return $a / $b;
     }
 }
 
-$risultato = divisione($num1, $num2);
-echo "<h3>Risultato: $num1 ÷ $num2 = $risultato</h3>";
+$risultato = divisione($a, $b);
+echo "<h3>Risultato: $a ÷ $b = $risultato</h3>";
 ?>

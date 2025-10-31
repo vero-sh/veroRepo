@@ -101,6 +101,8 @@ error 404 not found: il file non esiste o non e' raggiungibile dal web server
 
 error 500 internal server error: errore nel codice php, per vedere l'errore occorre abilitare la visualizzazione degli errori nel file php.ini
 
+
+
 */
 
 ?>

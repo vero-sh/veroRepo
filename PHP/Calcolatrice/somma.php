@@ -1,8 +1,8 @@
 <?php
-function somma($num1, $num2) {
-    return $num1 + $num2;
+function somma($a, $b) {
+    return $a + $b;
 }
 
-$risultato = somma($num1, $num2);
-echo "<h3>Risultato: $num1 + $num2 = $risultato</h3>";
+$risultato = somma($a, $b);
+echo "<h3>Risultato: $a + $b = $risultato</h3>";
 ?>

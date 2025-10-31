@@ -1,8 +1,8 @@
 <?php
-function moltiplicazione($num1, $num2) {
-    return $num1 * $num2;
+function moltiplicazione($a, $b) {
+    return $a * $b;
 }
 
-$risultato = moltiplicazione($num1, $num2);
-echo "<h3>Risultato: $num1 × $num2 = $risultato</h3>";
+$risultato = moltiplicazione($a, $b);
+echo "<h3>Risultato: $a × $b = $risultato</h3>";
 ?>
