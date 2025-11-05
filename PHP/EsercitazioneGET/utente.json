@@ -1,72 +1,9 @@
 [
   {
-    "nome": "Luca",
-    "cognome": "Rossi",
-    "email": "luca.rossi@example.com",
-    "login": "lucarossi",
-    "password": "Passw0rd1!"
-  },
-  {
-    "nome": "Giulia",
-    "cognome": "Bianchi",
-    "email": "giulia.bianchi@example.com",
-    "login": "giubia",
-    "password": "Giulia123!"
-  },
-  {
-    "nome": "Marco",
-    "cognome": "Verdi",
-    "email": "marco.verdi@example.com",
-    "login": "marcover",
-    "password": "MarV2023$"
-  },
-  {
-    "nome": "Sara",
-    "cognome": "Neri",
-    "email": "sara.neri@example.com",
-    "login": "sarineri",
-    "password": "S@ra2024"
-  },
-  {
-    "nome": "Davide",
-    "cognome": "Conti",
-    "email": "davide.conti@example.com",
-    "login": "d.conti",
-    "password": "DavC!567"
-  },
-  {
-    "nome": "Elena",
-    "cognome": "Gallo",
-    "email": "elena.gallo@example.com",
-    "login": "elenagal",
-    "password": "Elen@G22"
-  },
-  {
-    "nome": "Francesco",
-    "cognome": "Ricci",
-    "email": "francesco.ricci@example.com",
-    "login": "franricci",
-    "password": "FrRicci!89"
-  },
-  {
-    "nome": "Chiara",
-    "cognome": "Fontana",
-    "email": "chiara.fontana@example.com",
-    "login": "chifon",
-    "password": "Chiara#2025"
-  },
-  {
-    "nome": "Alessandro",
-    "cognome": "Grassi",
-    "email": "alessandro.grassi@example.com",
-    "login": "alegrassi",
-    "password": "Aless123!"
-  },
-  {
-    "nome": "Martina",
-    "cognome": "Costa",
-    "email": "martina.costa@example.com",
-    "login": "marticosta",
-    "password": "MartiCo#1"
+    "nome": "Niccolò",
+    "cognome": "Veronesi",
+    "email": "niccolo.veronesi@example.com",
+    "login": "niccovero",
+    "password": "1234"
   }
 ]
