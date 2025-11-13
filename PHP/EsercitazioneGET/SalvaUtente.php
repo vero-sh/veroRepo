@@ -24,7 +24,7 @@ if(!file_exists($nomeFile)){
     die("errore file non esistente");
 
 }else{
-    if (empty($_GET["nome"]) || empty($_GET["cognome"]) || empty($_GET["email"]) || empty($_GET["login"]) || empty($_GET["password"])) {
+    if (empty($_POST["nome"]) || empty($_POST["cognome"]) || empty($_POST["email"]) || empty($_POST["login"]) || empty($_POST["password"])) {
         die("Dati incompleti per la registrazione.");
     }
     // dati da salvare
@@ -37,18 +37,18 @@ if(!file_exists($nomeFile)){
     
 
     foreach ($dati as $utente) {
-        if ($utente['login'] === $_GET['login']) {
+        if ($utente['login'] === $_POST['login']) {
             die("Errore: Il login esiste già. Scegli un altro login.");
         }
     }
 
 
     $utente = [
-            "nome" => $_GET["nome"],
-            "cognome" => $_GET["cognome"],
-            "email" => $_GET["email"],
-            "login" => $_GET["login"],
-            "password" => $_GET["password"]
+            "nome" => $_POST["nome"],
+            "cognome" => $_POST["cognome"],
+            "email" => $_POST["email"],
+            "login" => $_POST["login"],
+            "password" => $_POST["password"]
     ];
     //aggiungo i nuovi dati
     $dati[] = $utente;

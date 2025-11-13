@@ -1,0 +1,22 @@
+
+I cookie sono file di testo salvati nel browser del client
+
+Questo file di testo, ad alto livello, memorizza l'informazione sottoforma chiave - valore
+
+I cookie si dividono in:
+
+- cookie di preferenza: prefernze dell utente in modo tale che la prossima volta che apro il sito avro le impostazioni messe da me
+- cookie statistici: cookie anonimi creati ai fini di analisi per capire come e l esperienza sul sito
+- cookie di marketing: tracciano l'utente per mostrare annunci personalizzati
+- cookie di terze parti
+
+Componenti del cookie:
+
+- nome : chiave con cui prendo il valore
+- valore 
+- tempo di vita : per quanto tempo e valido
+- path
+- dominio : puo far riferimento al dominio o al sottodominio
+- secure : accesso si o no a js
+- httponly : dice se il cookie puo essere spedito solo con protocollo https o anche http(false solo https)
+

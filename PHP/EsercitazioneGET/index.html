@@ -86,7 +86,6 @@
             box-shadow: none;
         }
 
-        .actions{display:flex;gap:0.6rem;align-items:center;justify-content:space-between;margin-top:0.6rem}
         .muted-note{font-size:0.85rem;color:var(--muted)}
 
         @media (max-width:520px){
@@ -99,7 +98,7 @@
         <h1>Effettua il login</h1>
         <p class="lead">Accedi con il tuo account. Se non ne hai uno, registrati.</p>
 
-        <form method="GET" action="controllo.php">
+        <form method="post" action="controllo.php">
             <label for="username">Username</label>
             <input type="text" name="username" id="username" required />
 

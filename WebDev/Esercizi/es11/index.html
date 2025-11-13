@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calcolatrice di Spesa di Gruppo</title>
+<script src="script.js" defer></script>
+</head>
+<body>
+  <div class="container">
+    <h1>💰 Calcolatrice di Spesa di Gruppo</h1>
+    <input type="text" id="name" placeholder="Nome">
+    <input type="number" id="amount" placeholder="Importo speso (€)" min="0" step="0.01">
+    <button onclick="addExpense()">Aggiungi</button>
+
+    <h3>Lista delle spese:</h3>
+    <ul id="expenseList"></ul>
+
+    <button onclick="calculate()">Calcola Bilanci</button>
+
+    <div id="results" class="result"></div>
+  </div>
+
+</body>
+</html>

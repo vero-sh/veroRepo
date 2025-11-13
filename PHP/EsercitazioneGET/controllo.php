@@ -52,7 +52,7 @@
 
         $controllo = true;
         foreach ($dati as $utente) {
-                if ($utente['login'] === $_GET['username'] && $utente['password'] === $_GET['password']) {
+                if ($utente['login'] === $_POST['username'] && $utente['password'] === $_POST['password']) {
                     echo "<h1>Benvenuto " . $utente['nome'] . "</h1>";
                     echo "<h3>Accesso effettuato con successo</h3>";
                     $controllo = false;
