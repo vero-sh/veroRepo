@@ -17,7 +17,7 @@
         echo '<form action="set-cookie.php" method="post">
                 <label for="nome">Inserisci il tuo nome:</label>
                 <input type="text" id="nome" name="nome" required>
-                <button type="submit">Invia</button>
+                <button type="submit">Invia</button> 
               </form>';
     }
     ?>
