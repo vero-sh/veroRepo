@@ -1,0 +1,12 @@
+[
+  { "id": 1, "nome": "Tastiera Meccanica" },
+  { "id": 2, "nome": "Mouse Wireless" },
+  { "id": 3, "nome": "Cuffie Bluetooth" },
+  { "id": 4, "nome": "Borraccia Termica" },
+  { "id": 5, "nome": "Quaderno a Righe" },
+  { "id": 6, "nome": "Lampada da Tavolo" },
+  { "id": 7, "nome": "Caricatore USB-C" },
+  { "id": 8, "nome": "Powerbank 20000mAh" },
+  { "id": 9, "nome": "Custodia per Laptop" },
+  { "id": 10, "nome": "Zaino Impermeabile" }
+]
