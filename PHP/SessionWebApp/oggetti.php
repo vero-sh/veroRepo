@@ -6,7 +6,7 @@ if (!isset($_SESSION['utente'])) {
     exit;
 }
 
-// Se aggiunge un oggetto al carrello
+
 if (isset($_GET['add'])) {
     $idAdd = intval($_GET['add']);
 
@@ -30,7 +30,7 @@ $utente = $_SESSION['utente'];
 <head><meta charset="UTF-8"><title>Oggetti</title></head>
 <body>
 
-<h1>Benvenuto <?= $utente['nome'] ?> <?= $utente['cognome'] ?></h1>
+<h1>Benvenuto <?= $utente['username'] ?></h1>
 
 <h2>Lista oggetti</h2>
 

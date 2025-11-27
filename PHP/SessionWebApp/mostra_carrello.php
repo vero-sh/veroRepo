@@ -19,8 +19,7 @@ $carrello = $_SESSION['carrello'] ?? [];
 
 <h2>Dati utente</h2>
 <p>ID: <?= $utente['id'] ?></p>
-<p>Nome: <?= $utente['nome'] ?></p>
-<p>Cognome: <?= $utente['cognome'] ?></p>
+<p>Username: <?= $utente['username'] ?></p>
 
 <h2>Oggetti nel carrello</h2>
 
