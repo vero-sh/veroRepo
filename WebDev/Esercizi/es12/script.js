@@ -7,36 +7,50 @@ Quando raggiungi il limite (o zero se vai sotto),
 appare un messaggio "LIMITE RAGGIUNTO!" in un div 
 (per semplicità. un div è molto simile a un p). 
 Il bottone corrispondente si disabilita.
-
-
 */
 
-//da finire a casa
+let c = 0;
+let max = document.getElementById("max");
+let display = document.getElementById("pp");
+let btnsomma = document.getElementById("btnsomma");
+let btnsottr = document.getElementById("btnsottrazione");
+let mess = document.getElementById("div");
 
-let cont = 0;
-
-const MAX = document.getElementById("max");
-
-const btn1 = document.getElementById("btnsomma");
-const btn2 = document.getElementById("btnsottrazione");
-
-while(true){
-    
-    console.log(c);
-
-    if(btn1.addEventListener("click")){ 
-        if(c>=MAX){
-        alert("limite raggiunto: "+MAX);
-        break; 
+btnsomma.addEventListener("click", () =>{
+      if(c<max.value) {
+        c++;
     }
-    c++;  
+    updateDisplay();
+})
+
+btnsottr.addEventListener("click", () =>{
+    if(c>0) {
+        c--;
+    }
+    updateDisplay();
+})
+
+function updateDisplay(){
+
+    display.textContent = c;
+    if(c>=max.value){
+        mess.textContent = "limite raggiunto"
+        display.disabled = true;
+    }else{
+        display.disabled = false;
+        mess.textContent = "";
+    }
+
+     if (c <= 0) {
+        mess.textContent = "LIMITE RAGGIUNTO!";
+        btnsottr.disabled = true;
+    } else {
+        btnsottr.disabled = false;
+        if (c < max.value) mess.textContent = "";
+    }
 }
-    if(btn2.addEventListener("click")){
-        if(c <= 0) {
-        alert("numero negativo");
-        break;
-    }
-    c--;
-    }
-}
+
+updateDisplay();
+
+
 
