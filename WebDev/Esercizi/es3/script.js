@@ -12,5 +12,6 @@ btn.addEventListener("click", () => {
     }else{
         res.textContent = "il numero "+a.value+ " e' dispari";
     }
+    
 
 })
