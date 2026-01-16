@@ -1,20 +1,31 @@
-```mermaid
 flowchart TB
-    U[Utente Web/Mobile]
-    UI[Interfaccia Web/Mobile<br/>HTML / CSS / JavaScript]
-    API[Backend Python<br/>(FastAPI / Flask)]
-    AUTH[Modulo Autenticazione]
-    PROFILE[Gestione Profilo Utente]
-    BMI[Calcolo BMI]
+
+    U[Utente Web Mobile]
+    UI[Interfaccia Web Mobile]
+    
+    API[Backend Python NodeJS]
+    AUTH[Autenticazione]
+    PROFILE[Profilo Utente]
+    FORUM[Forum Salute]
     AI[Assistente AI]
-    DB[(Database Relazionale<br/>MySQL / SQLite)]
+
+    DB[(Database Relazionale)]
+
+    MODEL[Modello AI Open Source]
 
     U --> UI
     UI --> API
+
     API --> AUTH
     API --> PROFILE
-    API --> BMI
+    API --> FORUM
     API --> AI
+
     AUTH --> DB
     PROFILE --> DB
-    BMI --> DB
+    FORUM --> DB
+
+    AI --> MODEL
+    MODEL --> AI
+
+    API --> UI
