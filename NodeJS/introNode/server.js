@@ -1,71 +1,74 @@
-//terminale: ctrl + j
-//node --watch server.js serve ad aggiornare il server in auto
+// terminale: ctrl + j
+// node --watch server.js  -> serve ad aggiornare il server in auto
 
 const http = require("http");
 
-
-const PORT = 80; //
+const PORT = 80;
 const HOSTNAME = "localhost";
-const random = (Math.random()*100)+1;
-const random2 = Math.random()*
 
-//esercizio:
-// creare endpoint /number: che restituisce al client un numero random tra 1 e 100
-// creare endpoint /number/N che restituisce un numero tra 1 e N
-//metodi supportati su ogni endpoint: GET
-//non permettere: POST, DELETE -> restuituite una rappresesntazione JSON del problema
+// funzione per numero random tra 1 e max
+const randomNumber = (max) => Math.floor(Math.random() * max) + 1;
 
+const server = http.createServer((req, res) => {
 
-const server = http.createServer((req, res) =>{
-
-    if(req.url === "/" && req.method === "GET"){
+    // HOME
+    if (req.url === "/" && req.method === "GET") {
         res.statusCode = 200;
         res.setHeader("Content-Type", "text/plain");
         res.end("ciao, benvenuto");
-    
-    }else if (req.url === "/" && req.method === "POST"){
-        res.statusCode = 405; //method not allowed
-        res.setHeader("Allow", "GET");
-        res.end("POST NOT ALLOWED");
-    
-    }else if(req.url === "/users" && req.method === "GET"){
 
-        res.statuscode = 200;
+    // BLOCCO METODI NON CONSENTITI SU /
+    } else if (req.url === "/" && req.method !== "GET") {
+        res.statusCode = 405;
         res.setHeader("Content-Type", "application/json");
-        res.end(JSON.stringify(
-            [
-                {User : "vero", ID: 1},
-                {User : "bob", ID : 2}
-            ]
-        ));
-
-    }else if(req.url === "/" && req.method === "DELETE"){
-        res.statusCode = 405; //method not allowed
         res.setHeader("Allow", "GET");
-        res.end("DELETE NOT ALLOWED");
+        res.end(JSON.stringify({ error: "Metodo non consentito" }));
 
-    }else if(req.url === "/number" && req.method === "GET"){
+    // USERS
+    } else if (req.url === "/users" && req.method === "GET") {
+        res.statusCode = 200;
+        res.setHeader("Content-Type", "application/json");
+        res.end(JSON.stringify([
+            { user: "vero", id: 1 },
+            { user: "bob", id: 2 }
+        ]));
+
+    // /number → 1-100
+    } else if (req.url === "/number" && req.method === "GET") {
         res.statusCode = 200;
         res.setHeader("Content-Type", "text/plain");
-        res.end(random.) //numero random tra 1 e 100
-        
-    }else if(req.url === "/number/N", req.method === "GET"){
+        res.end(randomNumber(100).toString());
 
-        res.statusCode = 200;
-        res.setHeader("Content-Type", "text/plain");
-        res.end(random.)
+    // /number/N → 1-N
+    } else if (req.url.startsWith("/number/") && req.method === "GET") {
+        const parts = req.url.split("/");
+        const N = parseInt(parts[2]);
 
-    }else{
+        if (isNaN(N) || N <= 0) {
+            res.statusCode = 400;
+            res.setHeader("Content-Type", "application/json");
+            res.end(JSON.stringify({ error: "N deve essere un numero positivo" }));
+        } else {
+            res.statusCode = 200;
+            res.setHeader("Content-Type", "text/plain");
+            res.end(randomNumber(N).toString());
+        }
 
+    // METODI NON CONSENTITI SU /number
+    } else if (req.url.startsWith("/number") && req.method !== "GET") {
+        res.statusCode = 405;
+        res.setHeader("Content-Type", "application/json");
+        res.setHeader("Allow", "GET");
+        res.end(JSON.stringify({ error: "Metodo non consentito" }));
+
+    // 404
+    } else {
         res.statusCode = 404;
         res.setHeader("Content-Type", "application/json");
-        res.end(JSON.stringify({error : req.url + " Not found"}));
-
+        res.end(JSON.stringify({ error: req.url + " not found" }));
     }
-
-})
+});
 
 server.listen(PORT, HOSTNAME, () => {
-    console.log("online su http:/"+HOSTNAME+ ":" +PORT);
-})
-
+    console.log(`online su http://${HOSTNAME}:${PORT}`);
+});
