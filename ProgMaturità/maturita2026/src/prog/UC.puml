@@ -1,0 +1,49 @@
+@startuml
+left to right direction
+actor Utente as U
+
+rectangle "Sistema Benessere & Salute" {
+
+    (Registrarsi) as UC1
+    (Effettuare Login) as UC2
+
+    (Gestire dati personali) as UC3
+    (Inserire peso) as UC3a
+    (Inserire altezza) as UC3b
+    (Visualizzare grafico peso nel tempo) as UC4
+
+    (Calcolare statistiche salute) as UC5
+    (Calcolare BMI) as UC5a
+    (Calcolare BMR) as UC5b
+
+    (Interagire con Assistente AI) as UC6
+    (Chiedere consigli) as UC6a
+    (Fare domande su salute) as UC6b
+
+    (Partecipare al Forum) as UC7
+    (Creare post) as UC7a
+    (Commentare post) as UC7b
+}
+
+U --> UC1
+U --> UC2
+
+U --> UC3
+UC3 --> UC3a
+UC3 --> UC3b
+
+U --> UC4
+
+U --> UC5
+UC5 --> UC5a
+UC5 --> UC5b
+
+U --> UC6
+UC6 --> UC6a
+UC6 --> UC6b
+
+U --> UC7
+UC7 --> UC7a
+UC7 --> UC7b
+
+@enduml

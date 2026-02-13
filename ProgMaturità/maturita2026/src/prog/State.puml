@@ -1,0 +1,30 @@
+@startuml
+[*] --> NonAutenticato
+
+NonAutenticato --> Registrazione : Crea nuovo account
+Registrazione --> NonAutenticato : Registrazione completata
+
+NonAutenticato --> Autenticato : Effettua login
+
+Autenticato --> Dashboard : Accesso area personale
+
+Dashboard --> InserimentoDati : Inserisce peso/altezza
+InserimentoDati --> Dashboard : Dati salvati
+
+Dashboard --> VisualizzazioneGrafico : Richiede grafico peso
+VisualizzazioneGrafico --> Dashboard : Torna alla dashboard
+
+Dashboard --> CalcoloStatistiche : Calcola BMI/BMR
+CalcoloStatistiche --> Dashboard : Risultato mostrato
+
+Dashboard --> ChatAI : Interagisce con assistente AI
+ChatAI --> Dashboard : Fine conversazione
+
+Dashboard --> Forum : Entra nel forum
+Forum --> Dashboard : Torna alla dashboard
+
+Autenticato --> Logout : Effettua logout
+Logout --> NonAutenticato
+
+@enduml
+

@@ -1,0 +1,66 @@
+@startuml
+start
+
+:Apri applicazione;
+:Visualizza pagina login;
+
+if (Utente registrato?) then (Sì)
+    :Inserisce credenziali;
+    :Effettua login;
+else (No)
+    :Compila form registrazione;
+    :Crea account;
+    :Effettua login;
+endif
+
+:Accede alla Dashboard;
+
+partition "Gestione Dati" {
+    if (Vuole inserire dati?) then (Sì)
+        :Inserisce peso/altezza;
+        :Salvataggio nel database;
+    endif
+}
+
+partition "Grafico" {
+    if (Vuole vedere grafico?) then (Sì)
+        :Richiede dati al backend;
+        :Visualizza grafico peso nel tempo;
+    endif
+}
+
+partition "Statistiche Salute" {
+    if (Vuole calcolare statistiche?) then (Sì)
+        :Seleziona tipo statistica (BMI, BMR...);
+        :Calcolo statistica;
+        :Mostra risultato;
+    endif
+}
+
+partition "Assistente AI" {
+    if (Vuole parlare con AI?) then (Sì)
+        :Scrive domanda;
+        :Invia richiesta all'assistente;
+        :Riceve risposta AI;
+    endif
+}
+
+partition "Forum" {
+    if (Vuole usare il forum?) then (Sì)
+        :Visualizza post;
+        if (Crea nuovo post?) then (Sì)
+            :Scrive post;
+            :Pubblica post;
+        endif
+
+        if (Commenta post?) then (Sì)
+            :Scrive commento;
+            :Pubblica commento;
+        endif
+    endif
+}
+
+:Logout;
+stop
+@enduml
+
