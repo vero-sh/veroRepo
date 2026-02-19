@@ -20,7 +20,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST["email"];
     $eta = $_POST["eta"];
 
-    $sql = "INSERT INTO $dbname.utente (id_utente, nome, cognome, email, eta) VALUES ('$id', '$nome', '$cognome', '$email', '$eta')";
+    $sql = "INSERT INTO $dbname.utente (id_utente, noBme, cognome, email, eta) VALUES ('$id', '$nome', '$cognome', '$email', '$eta')";
 
     if ($conn->query($sql) === TRUE) {
         echo "Nuovo record inserito con successo";
